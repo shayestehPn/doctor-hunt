@@ -1,0 +1,36 @@
+import 'package:doctor_hunt/binding.dart';
+import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
+import 'package:doctor_hunt/presentation/pages/home_screen.dart';
+import 'package:doctor_hunt/presentation/pages/on_branding_page.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import '../presentation/pages/splash_screen.dart';
+import 'routes.dart';
+
+final appPages = [
+
+  GetPage(
+    name: Routes.splashScreen,
+    page: () => SplashScreen(),
+    binding: BindingClass()
+  ),
+
+  GetPage(
+      name: Routes.onBrandingPage,
+      page: () => OnBrandingPage(),
+  ),
+
+  GetPage(
+      name: Routes.homeScreen,
+      page: () =>  HomeScreen(),
+      binding: BindingClass()
+  ),
+
+  GetPage(
+    name: Routes.loadingDialog,
+    page: () => const LoadingDialog(),
+    fullscreenDialog: true,
+    transition: Transition.fade,
+  ),
+
+];

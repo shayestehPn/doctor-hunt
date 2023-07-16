@@ -23,7 +23,7 @@ class CustomNetworkImage extends StatelessWidget {
       borderRadius: borderRadius,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
         placeholder: (context, url) =>
             Container(
               width: width,
@@ -34,7 +34,15 @@ class CustomNetworkImage extends StatelessWidget {
               ),
             ),
         errorWidget: (context, url, error) =>
-        const Icon(Icons.error),
+            Container(
+              width: width,
+              height: height,
+              decoration: BoxDecoration(
+                borderRadius: borderRadius,
+                color: Colors.grey[100],
+              ),
+              child: const Icon(Icons.error),
+            )
       ),
     );
 

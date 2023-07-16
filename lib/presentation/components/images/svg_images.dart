@@ -45,4 +45,16 @@ class SvgImage {
   static final  Widget arrowRightSvg = SvgPicture.asset(
     "${Assistance.svgImagesLocation}arrow_right.svg",
   );
+  static final  Widget yellowStarSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}yellow_star.svg",
+  );
+  static final  Widget grayStarSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}gray_star.svg",
+  );
+  static final  Widget emptyHeartSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}empty_heart.svg",
+  );
+  static final  Widget solidHeartSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}solid_heart.svg",
+  );
 }

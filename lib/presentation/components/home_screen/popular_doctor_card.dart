@@ -1,5 +1,6 @@
 import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/constants/styles.dart';
+import 'package:doctor_hunt/presentation/components/home_screen/star_card.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +16,7 @@ class PopularDoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 264.h,
+      height: 284.h,
       width: 190.w,
       margin: EdgeInsets.only(right: 15.w),
       decoration: BoxDecoration(
@@ -54,10 +55,25 @@ class PopularDoctorCard extends StatelessWidget {
                 color: AppColors.gray
             ),
           ),
+          SizedBox(height: 6.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
+              StarCard(
+                  isYellow: model.score.toInt()>=1?true:false
+              ),
+              StarCard(
+                  isYellow: model.score.toInt()>=2?true:false
+              ),
+              StarCard(
+                  isYellow: model.score.toInt()>=3?true:false
+              ),
+              StarCard(
+                  isYellow: model.score.toInt()>=4?true:false
+              ),
+              StarCard(
+                  isYellow: model.score.toInt()>=5?true:false
+              )
             ],
           )
         ],

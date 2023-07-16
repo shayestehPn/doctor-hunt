@@ -20,8 +20,8 @@ class HomeRepository{
 
     List<DoctorFeaturedModel> featuredDoctorsList=[];
 
-    featuredDoctorsList.add(DoctorFeaturedModel(name: "Amin Bakhshi", imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg", score: 3, priceEveryHour: "22.5", isLikedByUser: true));
-    featuredDoctorsList.add(DoctorFeaturedModel(name: "Fateme Hanife", imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg", score: 5, priceEveryHour: "50.5", isLikedByUser: false));
+    featuredDoctorsList.add(DoctorFeaturedModel(name: "Amin Bakhshi", imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg", score: 3.7, priceEveryHour: "22.5", isLikedByUser: true));
+    featuredDoctorsList.add(DoctorFeaturedModel(name: "Fateme Hanife", imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg", score: 5.6, priceEveryHour: "50.5", isLikedByUser: false));
 
     return HomeDto(
         userName: 'Shayesteh Parvin Nejad',

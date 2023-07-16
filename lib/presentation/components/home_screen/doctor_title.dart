@@ -4,8 +4,10 @@ import '../../../constants/colors.dart';
 import '../images/svg_images.dart';
 
 
-class PopularDoctorHeader extends StatelessWidget {
-  const PopularDoctorHeader({Key? key}) : super(key: key);
+class DoctorTitle extends StatelessWidget {
+
+  final String title;
+  const DoctorTitle({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class PopularDoctorHeader extends StatelessWidget {
             Expanded(
               child: Align(
                 alignment: Alignment.topLeft,
-                child: Text("Popular Doctor",
+                child: Text(title,
                   style: TextStyle(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w500,

@@ -1,7 +1,7 @@
 class DoctorFeaturedModel{
 
   String name;
-  int score;
+  double score;
   String imageUrl;
   String priceEveryHour;
   bool isLikedByUser;

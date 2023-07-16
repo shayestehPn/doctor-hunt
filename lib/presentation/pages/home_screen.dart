@@ -1,5 +1,5 @@
 
-import 'package:doctor_hunt/constants/colors.dart';
+import 'package:doctor_hunt/presentation/components/home_screen/featured_doctors_list.dart';
 import 'package:doctor_hunt/presentation/components/home_screen/home_app_bar.dart';
 import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +9,10 @@ import '../../business_logic/home_screen/home_cubit.dart';
 import '../../business_logic/home_screen/home_state.dart';
 import '../components/home_screen/live_doctors_list.dart';
 import '../components/home_screen/medical_category_list.dart';
-import '../components/home_screen/popular_doctor_header.dart';
+import '../components/home_screen/doctor_title.dart';
 import '../components/home_screen/popular_doctors_list.dart';
 import '../components/home_screen/search_card.dart';
 import '../components/images/png_images.dart';
-import '../components/images/svg_images.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -62,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                        ),
                        Positioned(
                          right: 0,
-                         top: 942.h,
+                         top: 600.h,
                          child: SizedBox(
                            height: 242.w,
                            width: 242.w,
@@ -96,11 +95,16 @@ class HomeScreen extends StatelessWidget {
                                            liveDoctorsList: state.dto.liveDoctorsList
                                        ),
                                        const MedicalCategoryList(),
-                                       const PopularDoctorHeader(),
+                                       const DoctorTitle(title: "Popular Doctor"),
                                        PopularDoctorsList(
                                          popularDoctorsList: state.dto.popularDoctorsList
-                                       )
-
+                                       ),
+                                       Padding(
+                                         padding: EdgeInsets.only(top: 31.h),
+                                           child: const DoctorTitle(title: "Feature Doctor")
+                                       ),
+                                       FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
+                                       SizedBox(height: 32.h)
                                      ],
                                    )
                                  ],

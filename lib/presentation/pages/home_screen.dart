@@ -5,8 +5,10 @@ import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../business_logic/home_screen/home_cubit.dart';
 import '../../business_logic/home_screen/home_state.dart';
+import '../../routing/routes.dart';
 import '../components/home_screen/live_doctors_list.dart';
 import '../components/home_screen/medical_category_list.dart';
 import '../components/home_screen/doctor_title.dart';
@@ -112,7 +114,11 @@ class HomeScreen extends StatelessWidget {
                            )
                          ],
                        ),
-                       const SearchCard()
+                        SearchCard(
+                         onClick: (){
+                           Get.toNamed(Routes.findDoctorsPage);
+                         },
+                       )
                      ],
                    ),
                  ),

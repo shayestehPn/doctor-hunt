@@ -1,5 +1,6 @@
 import 'package:doctor_hunt/binding.dart';
 import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
+import 'package:doctor_hunt/presentation/pages/find_doctors_page.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
 import 'package:doctor_hunt/presentation/pages/main_page.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_page.dart';
@@ -33,9 +34,15 @@ final appPages = [
     fullscreenDialog: true,
     transition: Transition.fade,
   ),
+
   GetPage(
     name: Routes.mainPage,
     page: () =>  MainPage(),
+  ),
+
+  GetPage(
+    name: Routes.findDoctorsPage,
+    page: () =>   FindDoctorsPage(),
   ),
 
 ];

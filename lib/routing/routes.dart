@@ -6,6 +6,7 @@ abstract class Routes {
   static const homeScreen = '/home_screen';
   static const loadingDialog = '/loading_dialog';
   static const mainPage = '/main_page';
+  static const findDoctorsPage = '/find_doctors_page';
 
 }
 

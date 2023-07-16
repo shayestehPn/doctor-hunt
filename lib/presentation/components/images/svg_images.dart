@@ -90,5 +90,8 @@ class SvgImage {
     "${Assistance.svgImagesLocation}message_icon.svg",
     color: Colors.white,
   );
+  static final  Widget arrowLeftSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}arrow_left.svg",
+  );
 
 }

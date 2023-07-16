@@ -1,3 +1,4 @@
+import 'package:doctor_hunt/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../Assistance.dart';
@@ -57,4 +58,37 @@ class SvgImage {
   static final  Widget solidHeartSvg = SvgPicture.asset(
     "${Assistance.svgImagesLocation}solid_heart.svg",
   );
+  static final  Widget homeGraySvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}home_icon.svg",
+    color: AppColors.gray,
+  );
+  static final  Widget homeWhiteSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}home_icon.svg",
+    color: Colors.white,
+  );
+  static final  Widget heartGraySvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}heart_icon.svg",
+    color: AppColors.gray,
+  );
+  static final  Widget heartWhiteSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}heart_icon.svg",
+    color: Colors.white,
+  );
+  static final  Widget bookGraySvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}book_icon.svg",
+    color: AppColors.gray,
+  );
+  static final  Widget bookWhiteSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}book_icon.svg",
+    color: Colors.white,
+  );
+  static final  Widget messageGraySvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}message_icon.svg",
+    color: AppColors.gray,
+  );
+  static final  Widget messageWhiteSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}message_icon.svg",
+    color: Colors.white,
+  );
+
 }

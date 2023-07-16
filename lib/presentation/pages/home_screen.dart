@@ -104,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                                            child: const DoctorTitle(title: "Feature Doctor")
                                        ),
                                        FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
-                                       SizedBox(height: 32.h)
+                                       SizedBox(height: 100.h)
                                      ],
                                    )
                                  ],

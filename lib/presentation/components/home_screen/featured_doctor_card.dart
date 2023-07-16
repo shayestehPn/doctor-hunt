@@ -15,7 +15,7 @@ class FeaturedDoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.h,
+      height: 160.h,
       width: 96.w,
       margin: EdgeInsets.only(right: 12.w),
       decoration: BoxDecoration(

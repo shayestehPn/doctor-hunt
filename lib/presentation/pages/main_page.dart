@@ -1,6 +1,12 @@
+import 'package:doctor_hunt/constants/styles.dart';
+import 'package:doctor_hunt/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../business_logic/main_page/main_page_cubit.dart';
+import '../../business_logic/main_page/main_page_state.dart';
+import '../components/main_page/main_bottom_navigation_bar.dart';
 
 class MainPage extends StatelessWidget {
 
@@ -8,7 +14,9 @@ class MainPage extends StatelessWidget {
 
   PageController controller = PageController( keepPage: true);
 
-  List pageViewItems = [];
+  List pageViewItems = [
+    const HomeScreen()
+  ];
 
 
   @override
@@ -16,7 +24,7 @@ class MainPage extends StatelessWidget {
     return BlocProvider<MainPageCubit>(
       create: (context) {
         final cubit = MainPageCubit();
-        cubit.increasePageNumber();
+        cubit.setCurrentPageNumber(0);
         return cubit;
       },
       child: BlocBuilder<MainPageCubit, MainPageState>(
@@ -40,11 +48,17 @@ class MainPage extends StatelessWidget {
                       return pageViewItems[position];
                     }
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                  ],
-                )
+                MainBottomNavigationBar(
+                  currentPageValue: state.currentPageValue,
+                  selectPage: (int pageValue) {
+                    context.read<MainPageCubit>().setCurrentPageNumber(pageValue);
+                    // controller.animateToPage(
+                    //     pageViewItems[pageValue],
+                    //     duration: const Duration(microseconds: 200),
+                    //     curve: Curves.linear
+                    // );
+                  },
+                ),
               ],
             ),
           );

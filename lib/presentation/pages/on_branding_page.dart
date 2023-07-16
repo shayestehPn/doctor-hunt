@@ -70,7 +70,7 @@ class OnBrandingPage extends StatelessWidget {
                           height: 54.h,
                           width: 295.w,
                           onClick: (){
-                            Get.toNamed(Routes.homeScreen);
+                            Get.toNamed(Routes.mainPage);
                           },
                           text: "Get started",
                         ),
@@ -107,7 +107,7 @@ class OnBrandingPage extends StatelessWidget {
   void goToNext(BuildContext context,OnBrandingState state){
     context.read<OnBrandingCubit>().increasePageNumber();
     if(state.currentPageValue>=pageViewItems.length){
-      Get.toNamed(Routes.homeScreen);
+      Get.toNamed(Routes.mainPage);
     }
     else{
       controller.animateToPage(

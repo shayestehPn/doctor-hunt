@@ -1,6 +1,7 @@
 import 'package:doctor_hunt/binding.dart';
 import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
+import 'package:doctor_hunt/presentation/pages/main_page.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
@@ -22,7 +23,7 @@ final appPages = [
 
   GetPage(
       name: Routes.homeScreen,
-      page: () =>  HomeScreen(),
+      page: () =>  const HomeScreen(),
       binding: BindingClass()
   ),
 
@@ -31,6 +32,10 @@ final appPages = [
     page: () => const LoadingDialog(),
     fullscreenDialog: true,
     transition: Transition.fade,
+  ),
+  GetPage(
+    name: Routes.mainPage,
+    page: () =>  MainPage(),
   ),
 
 ];

@@ -5,9 +5,20 @@ class FindDoctorsDto{
 
   String error="";
   List<DoctorModelForFindDoctors> doctorsList=[];
+  List<DoctorModelForFindDoctors>? searchedDoctorsList=[];
 
 
-  FindDoctorsDto({required this.doctorsList});
+  FindDoctorsDto({required this.doctorsList,this.searchedDoctorsList});
+
+  FindDoctorsDto copyWith({
+    List<DoctorModelForFindDoctors>? doctorsList,
+    List<DoctorModelForFindDoctors>? searchedDoctorsList,
+  }) {
+    return FindDoctorsDto(
+      doctorsList: doctorsList??this.doctorsList,
+      searchedDoctorsList: searchedDoctorsList??this.searchedDoctorsList,
+    );
+  }
 
 
   FindDoctorsDto.status(int status){

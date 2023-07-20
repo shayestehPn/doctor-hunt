@@ -71,17 +71,17 @@ class FindDoctorsPage extends StatelessWidget {
                                FindDoctorTextField(
                                  controller: doctorTextFieldController,
                                  closeOnClick: () {
-
+                                   doctorTextFieldController.text="";
                                  },
                                  magnifierOnClick: () {
-
+                                   context.read<FindDoctorsCubit>().searchDoctor(doctorTextFieldController.text);
                                  },
                                ),
                               Expanded(
                                 child: ListView(
                                   shrinkWrap: true,
                                   children: [
-                                    FoundDoctorsList(doctorsList: state.dto.doctorsList)
+                                    FoundDoctorsList(doctorsList: state.dto.searchedDoctorsList!)
                                   ],
                                 ),
                               )

@@ -93,5 +93,8 @@ class SvgImage {
   static final  Widget arrowLeftSvg = SvgPicture.asset(
     "${Assistance.svgImagesLocation}arrow_left.svg",
   );
+  static final  Widget greenCircleSvg = SvgPicture.asset(
+    "${Assistance.svgImagesLocation}green_circle.svg",
+  );
 
 }

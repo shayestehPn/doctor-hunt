@@ -19,30 +19,34 @@ class CustomNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: borderRadius,
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
-        fit: BoxFit.cover,
-        placeholder: (context, url) =>
-            Container(
-              width: width,
-              height: height,
-              decoration: BoxDecoration(
-                borderRadius: borderRadius,
-                color: Colors.grey[200],
+    return SizedBox(
+      height: height,
+      width: width,
+      child: ClipRRect(
+        borderRadius: borderRadius,
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          fit: BoxFit.cover,
+          placeholder: (context, url) =>
+              Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  borderRadius: borderRadius,
+                  color: Colors.grey[200],
+                ),
               ),
-            ),
-        errorWidget: (context, url, error) =>
-            Container(
-              width: width,
-              height: height,
-              decoration: BoxDecoration(
-                borderRadius: borderRadius,
-                color: Colors.grey[100],
-              ),
-              child: const Icon(Icons.error),
-            )
+          errorWidget: (context, url, error) =>
+              Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  borderRadius: borderRadius,
+                  color: Colors.grey[100],
+                ),
+                child: const Icon(Icons.error),
+              )
+        ),
       ),
     );
 

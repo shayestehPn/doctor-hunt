@@ -1,4 +1,5 @@
 import 'package:doctor_hunt/business_logic/find_doctors/find_doctors_cubit.dart';
+import 'package:doctor_hunt/presentation/components/find_doctors_page/found_doctors_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,7 +81,7 @@ class FindDoctorsPage extends StatelessWidget {
                                 child: ListView(
                                   shrinkWrap: true,
                                   children: [
-
+                                    FoundDoctorsList(doctorsList: state.dto.doctorsList)
                                   ],
                                 ),
                               )

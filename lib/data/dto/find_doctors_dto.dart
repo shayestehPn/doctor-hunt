@@ -1,11 +1,13 @@
 import '../../constants/strings.dart';
+import '../model/doctor_model_for_find_doctors.dart';
 
 class FindDoctorsDto{
 
   String error="";
+  List<DoctorModelForFindDoctors> doctorsList=[];
 
 
-  FindDoctorsDto();
+  FindDoctorsDto({required this.doctorsList});
 
 
   FindDoctorsDto.status(int status){

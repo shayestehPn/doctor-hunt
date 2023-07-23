@@ -81,7 +81,7 @@ class FindDoctorsPage extends StatelessWidget {
                                 child: ListView(
                                   shrinkWrap: true,
                                   children: [
-                                    FoundDoctorsList(doctorsList: state.dto.searchedDoctorsList!)
+                                   state.dto.searchedDoctorsList!=null? FoundDoctorsList(doctorsList: state.dto.searchedDoctorsList!):Container()
                                   ],
                                 ),
                               )

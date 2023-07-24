@@ -7,7 +7,7 @@ abstract class Routes {
   static const loadingDialog = '/loading_dialog';
   static const mainPage = '/main_page';
   static const findDoctorsPage = '/find_doctors_page';
-
+  static const selectTimePage = '/select_time_page';
 }
 
 

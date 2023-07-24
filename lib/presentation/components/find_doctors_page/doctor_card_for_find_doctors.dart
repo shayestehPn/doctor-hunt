@@ -1,16 +1,18 @@
 import 'package:doctor_hunt/data/model/doctor_model_for_find_doctors.dart';
+import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constants/colors.dart';
 import '../images/svg_images.dart';
 import '../network_image.dart';
 
+
 class DoctorCardForFindDoctors extends StatelessWidget {
 
   final DoctorModelForFindDoctors model;
+  final Function() bookOnClick;
 
-  const DoctorCardForFindDoctors({super.key, required this.model});
+  const DoctorCardForFindDoctors({super.key, required this.model,required this.bookOnClick});
 
   @override
   Widget build(BuildContext context) {
@@ -138,23 +140,13 @@ class DoctorCardForFindDoctors extends StatelessWidget {
 
                 ],
               ),
-              Container(
-                height: 34.h,
-                width: 112.w,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.green,
-                  borderRadius: BorderRadius.circular(4)
-                ),
-                child: Text(
-                  "book now",
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white
-                  ),
-                ),
-              )
+              CustomSolidGreenButton(
+                  height: 34.h,
+                  width: 112.w,
+                  text:  "book now",
+                  onClick: (){
+                    bookOnClick();
+                  })
             ],
           )
         ],

@@ -15,13 +15,39 @@ class HomeRepository{
 
 
     List<DoctorPopularModel>popularDoctorsList=[];
-    popularDoctorsList.add(DoctorPopularModel(name:  "Samin Hakimi", imageUrl: "https://doctorsns.com/sites/default/files/styles/manual_teaser_squareish_large/public/2023-06/news/halifaxrealestatephotography_0.jpg?itok=pj24tfDy", score: 2.8, medicalCategory: "dentist specialist"));
-    popularDoctorsList.add(DoctorPopularModel(name:  "Ali Hasani", imageUrl: "https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj", score: 3.1, medicalCategory: "heart specialist"));
+    popularDoctorsList.add(DoctorPopularModel(
+        id: "82",
+        name:  "Samin Hakimi",
+        imageUrl: "https://doctorsns.com/sites/default/files/styles/manual_teaser_squareish_large/public/2023-06/news/halifaxrealestatephotography_0.jpg?itok=pj24tfDy",
+        score: 2.8,
+        medicalCategory: "dentist specialist")
+    );
+    popularDoctorsList.add(DoctorPopularModel(
+        id: "56",
+        name:  "Ali Hasani",
+        imageUrl: "https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj",
+        score: 3.1,
+        medicalCategory: "heart specialist")
+    );
 
     List<DoctorFeaturedModel> featuredDoctorsList=[];
 
-    featuredDoctorsList.add(DoctorFeaturedModel(name: "Amin Bakhshi", imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg", score: 3.7, priceEveryHour: "22.5", isLikedByUser: true));
-    featuredDoctorsList.add(DoctorFeaturedModel(name: "Fateme Hanife", imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg", score: 5.6, priceEveryHour: "50.5", isLikedByUser: false));
+    featuredDoctorsList.add(DoctorFeaturedModel(
+        id: "43",
+        name: "Amin Bakhshi",
+        imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg",
+        score: 3.7,
+        priceEveryHour: "22.5",
+        isLikedByUser: true)
+    );
+    featuredDoctorsList.add(DoctorFeaturedModel(
+        id: "78",
+        name: "Fateme Hanife",
+        imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg",
+        score: 5.6,
+        priceEveryHour: "50.5",
+        isLikedByUser: false)
+    );
 
     return HomeDto(
         userName: 'Shayesteh Parvin Nejad',

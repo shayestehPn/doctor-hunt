@@ -7,8 +7,9 @@ import 'doctor_card_for_find_doctors.dart';
 class FoundDoctorsList extends StatelessWidget {
 
   final List<DoctorModelForFindDoctors> doctorsList;
+  final Function(int index) itemBookButtonOnClick;
 
-  const FoundDoctorsList({super.key, required this.doctorsList});
+  const FoundDoctorsList({super.key, required this.doctorsList, required this.itemBookButtonOnClick});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,12 @@ class FoundDoctorsList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: doctorsList.length,
         itemBuilder: (BuildContext context, int index) {
-          return  DoctorCardForFindDoctors(model: doctorsList[index]);
+          return  DoctorCardForFindDoctors(
+            model: doctorsList[index],
+            bookOnClick: () {
+              itemBookButtonOnClick(index);
+            },
+          );
         }
     );
   }

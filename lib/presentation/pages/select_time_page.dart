@@ -1,40 +1,34 @@
-import 'package:doctor_hunt/business_logic/find_doctors/find_doctors_cubit.dart';
-import 'package:doctor_hunt/presentation/components/find_doctors_page/found_doctors_list.dart';
-import 'package:doctor_hunt/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../business_logic/find_doctors/find_doctors_state.dart';
-import '../components/find_doctors_page/find_doctor_app_bar.dart';
-import '../components/find_doctors_page/find_doctor_search_text_field.dart';
+import '../../business_logic/select_time/select_time_cubit.dart';
+import '../../business_logic/select_time/select_time_state.dart';
+import '../components/app_bar_with_back_and_magnifier.dart';
 import '../components/images/png_images.dart';
 import '../components/loading_dilaog.dart';
 
 
-class FindDoctorsPage extends StatelessWidget {
-
-   FindDoctorsPage({Key? key}) : super(key: key);
-
-  TextEditingController doctorTextFieldController=TextEditingController();
+class SelectTimePage extends StatelessWidget {
+  const SelectTimePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider<FindDoctorsCubit>(
+      body: BlocProvider<SelectTimeCubit>(
         create: (context) {
-          final cubit = FindDoctorsCubit();
+          final cubit = SelectTimeCubit();
           cubit.getData();
           return cubit;
         },
-        child: BlocConsumer<FindDoctorsCubit, FindDoctorsState>(
-          listener: (context, homeState) {
-            if (homeState is Failure) {
+        child: BlocConsumer<SelectTimeCubit, SelectTimeState>(
+          listener: (context, state) {
+            if (state is Failure) {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.green,
-                  content: Text(homeState.error),
+                  content: Text(state.error),
                 ),
               );
             }
@@ -64,30 +58,18 @@ class FindDoctorsPage extends StatelessWidget {
                           ),
                           Column(
                             children: [
-                              FindDoctorAppBar(
-                                backOnClick: () {
-                                  Get.back();
-                                },
-                              ),
-                               FindDoctorTextField(
-                                 controller: doctorTextFieldController,
-                                 closeOnClick: () {
-                                   doctorTextFieldController.text="";
+                               AppBarWithBackAndMagnifier(
+                                 backOnClick: () {
+                                   Get.back();
                                  },
-                                 magnifierOnClick: () {
-                                   context.read<FindDoctorsCubit>().searchDoctor(doctorTextFieldController.text);
-                                 },
+                                 title: "Select Time",
+                                 magnifierOnClick: () {},
                                ),
                               Expanded(
                                 child: ListView(
                                   shrinkWrap: true,
                                   children: [
-                                  FoundDoctorsList(
-                                       doctorsList: state.dto.searchedDoctorsList,
-                                     itemBookButtonOnClick: (int index) {
-                                         Get.toNamed(Routes.selectTimePage,arguments: state.dto.searchedDoctorsList[index].id);
-                                     },
-                                   )
+
                                   ],
                                 ),
                               )

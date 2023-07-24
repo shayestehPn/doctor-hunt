@@ -4,6 +4,7 @@ import 'package:doctor_hunt/data/model/date_model.dart';
 class DoctorModelForFindDoctors{
 
   late String name;
+  late String id="0";
   late String medicalCategory;
   late String yearsOfExperience;
   late double satisfyPercent;
@@ -14,6 +15,7 @@ class DoctorModelForFindDoctors{
   late bool isLikedByUser=false;
 
   DoctorModelForFindDoctors({
+    required this.id,
     required this.name,
     required this.imageUrl,
     required this.medicalCategory,

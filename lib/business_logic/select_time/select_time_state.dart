@@ -37,7 +37,7 @@ class Success extends SelectTimeState {
   Success({required this.dto,required this.selectedDateIndex});
 
   @override
-  List<Object?> get props => [dto];
+  List<Object?> get props => [dto,selectedDateIndex];
 
   Success copyWith({
     SelectTimeDto? dto,

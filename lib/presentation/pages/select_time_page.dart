@@ -12,6 +12,8 @@ import '../components/app_bar_with_back_and_magnifier.dart';
 import '../components/five_stars.dart';
 import '../components/images/png_images.dart';
 import '../components/loading_dilaog.dart';
+import '../components/select_time_page/date_card_on_select_time.dart';
+import '../components/select_time_page/dates_list_on_select_time.dart';
 import '../components/select_time_page/doctor_card_on_select_time.dart';
 
 
@@ -75,11 +77,46 @@ class SelectTimePage extends StatelessWidget {
                                ),
                               Expanded(
                                 child: ListView(
-                                  shrinkWrap: true,
+                                  shrinkWrap: false,
                                   children: [
                                     SizedBox(height: 34.h),
                                     DoctorCardOnSelectTime(model: state.dto.doctorModel),
-
+                                    Container(
+                                      height: 70.h,
+                                      margin: EdgeInsets.only(top: 24.h),
+                                      child: ListView.builder(
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.horizontal,
+                                        physics: const ClampingScrollPhysics(),
+                                        padding: EdgeInsets.only(left: 20.w,right: 4.w),
+                                        itemCount: state.dto.availableDatesList.length,
+                                        itemBuilder: (context, index) {
+                                          return  DateCardOnSelectTime(
+                                            model: state.dto.availableDatesList[index],
+                                            isSelected: state.selectedDateIndex==index,
+                                            indexIsOdd: index.isOdd,
+                                            onClick: () {
+                                              context.read<SelectTimeCubit>().selectDate(index);
+                                              print(state.selectedDateIndex);
+                                            },
+                                          );
+                                        },
+                                      ),
+                                    )
+                                    // DatesListOnSelectTime(
+                                    //   datesList: state.dto.availableDatesList,
+                                    //   selectedDateIndex: state.selectedDateIndex,
+                                    //   selectDate: (int index) {
+                                    //     context.read<SelectTimeCubit>().selectDate(0);
+                                    //     print("99999999999"+" "+index.toString());
+                                    //   },
+                                    // ),
+                                    ,
+                                    state.selectedDateIndex!=-1?
+                                    Text(
+                                        "${state.dto.availableDatesList[state.selectedDateIndex].date.month} "
+                                            "${state.dto.availableDatesList[state.selectedDateIndex].date.day}"
+                                    ):Container(height: 90,width: 90,color: Colors.red,)
                                   ],
                                 ),
                               )

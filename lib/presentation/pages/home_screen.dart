@@ -34,7 +34,6 @@ class HomeScreen extends StatelessWidget {
         child: BlocConsumer<HomeCubit, HomeState>(
           listener: (context, homeState) {
             if (homeState is Failure) {
-              Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.green,

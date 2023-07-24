@@ -1,5 +1,5 @@
 import '../../constants/strings.dart';
-import '../model/date_for_booking.dart';
+import '../model/date_model_for_booking.dart';
 import '../model/doctor_model_for_select_time.dart';
 
 class SelectTimeDto{
@@ -12,7 +12,7 @@ class SelectTimeDto{
       score: 0.0,
       isLikedByUser: false
   );
-  List<DateForBooking> availableDatesList=[];
+  List<DateModelForBooking> availableDatesList=[];
 
 
 
@@ -20,7 +20,7 @@ class SelectTimeDto{
 
   SelectTimeDto copyWith({
     DoctorModelForSelectTime? doctorModel,
-    List<DateForBooking>? availableDatesList,
+    List<DateModelForBooking>? availableDatesList,
     int? selectedDateIndex
   }) {
     return SelectTimeDto(

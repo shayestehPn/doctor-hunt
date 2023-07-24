@@ -1,10 +1,9 @@
 import 'package:doctor_hunt/constants/colors.dart';
-import 'package:doctor_hunt/constants/styles.dart';
-import 'package:doctor_hunt/presentation/components/home_screen/star_card.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/model/doctor_popular_model.dart';
+import '../five_stars.dart';
 
 
 class PopularDoctorCard extends StatelessWidget {
@@ -56,26 +55,7 @@ class PopularDoctorCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 6.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              StarCard(
-                  isYellow: model.score.toInt()>=1?true:false
-              ),
-              StarCard(
-                  isYellow: model.score.toInt()>=2?true:false
-              ),
-              StarCard(
-                  isYellow: model.score.toInt()>=3?true:false
-              ),
-              StarCard(
-                  isYellow: model.score.toInt()>=4?true:false
-              ),
-              StarCard(
-                  isYellow: model.score.toInt()>=5?true:false
-              )
-            ],
-          )
+          FiveStars(score: model.score)
         ],
       ),
     );

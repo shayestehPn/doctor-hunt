@@ -1,3 +1,7 @@
+import 'package:doctor_hunt/constants/colors.dart';
+import 'package:doctor_hunt/constants/styles.dart';
+import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
+import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,8 +9,10 @@ import 'package:get/get.dart';
 import '../../business_logic/select_time/select_time_cubit.dart';
 import '../../business_logic/select_time/select_time_state.dart';
 import '../components/app_bar_with_back_and_magnifier.dart';
+import '../components/five_stars.dart';
 import '../components/images/png_images.dart';
 import '../components/loading_dilaog.dart';
+import '../components/select_time_page/doctor_card_on_select_time.dart';
 
 
 class SelectTimePage extends StatelessWidget {
@@ -63,12 +69,16 @@ class SelectTimePage extends StatelessWidget {
                                    Get.back();
                                  },
                                  title: "Select Time",
-                                 magnifierOnClick: () {},
+                                 magnifierOnClick: () {
+
+                                 },
                                ),
                               Expanded(
                                 child: ListView(
                                   shrinkWrap: true,
                                   children: [
+                                    SizedBox(height: 34.h),
+                                    DoctorCardOnSelectTime(model: state.dto.doctorModel),
 
                                   ],
                                 ),

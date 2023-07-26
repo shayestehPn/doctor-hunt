@@ -33,7 +33,7 @@ class SelectTimeCubit extends Cubit<SelectTimeState>{
   }
 
   void selectDate(int index){
-    emit((state as Success).copyWith(selectedDateIndex: index));
+    emit((state as Success).copyWith(selectedDateIndex: index,selectedTimeSlotIndex: 0));
   }
 
   void selectTimeSlot(int index){

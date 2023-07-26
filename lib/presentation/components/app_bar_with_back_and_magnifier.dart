@@ -1,4 +1,3 @@
-import 'package:doctor_hunt/presentation/components/button_with_touch_point.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'images/svg_images.dart';
@@ -8,13 +7,15 @@ class AppBarWithBackAndMagnifier extends StatelessWidget {
 
   final Function() backOnClick;
   final String title;
-  final Function() magnifierOnClick;
+  final Function()? magnifierOnClick;
+  bool showMagnifier;
 
-  const AppBarWithBackAndMagnifier({
+   AppBarWithBackAndMagnifier({
     super.key,
     required this.backOnClick,
     required this.title,
-    required this.magnifierOnClick
+    required this.showMagnifier,
+     this.magnifierOnClick,
   });
 
   @override

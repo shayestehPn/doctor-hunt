@@ -54,9 +54,7 @@ class SelectTimePage extends StatelessWidget {
                           Get.back();
                         },
                         title: "Select Time",
-                        magnifierOnClick: () {
-
-                        },
+                        showMagnifier: false,
                       ),
                       Expanded(
                         child: ListView(
@@ -79,8 +77,10 @@ class SelectTimePage extends StatelessWidget {
                             SizedBox(height: 20.h),
                             state.dto.availableDatesList.isNotEmpty?
                             Text(
-                              "${state.dto.availableDatesList[state.selectedDateIndex].date.month} "
-                                  "${state.dto.availableDatesList[state.selectedDateIndex].date.day}",
+                              state.selectedDateIndex==0?"today ${state.dto.availableDatesList[state.selectedDateIndex].date.month} "
+                                  "${state.dto.availableDatesList[state.selectedDateIndex].date.day}":
+                             "${state.dto.availableDatesList[state.selectedDateIndex].date.month} "
+                            "${state.dto.availableDatesList[state.selectedDateIndex].date.day}",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 16.sp,

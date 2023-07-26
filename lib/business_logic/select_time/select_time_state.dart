@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-
 import '../../data/dto/select_time_dto.dart';
+
 
 abstract class SelectTimeState extends Equatable{    //we cant make instance of abstract class
 

@@ -1,4 +1,4 @@
-import 'package:doctor_hunt/binding.dart';
+
 import 'package:doctor_hunt/presentation/components/loading_dilaog.dart';
 import 'package:doctor_hunt/presentation/pages/find_doctors_page.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
@@ -8,6 +8,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import '../presentation/pages/select_time_page.dart';
 import '../presentation/pages/splash_screen.dart';
+import '../utils/binding.dart';
 import 'routes.dart';
 
 final appPages = [

@@ -1,9 +1,6 @@
-import 'package:doctor_hunt/constants/styles.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../business_logic/main_page/main_page_cubit.dart';
 import '../../business_logic/main_page/main_page_state.dart';
 import '../components/main_page/main_bottom_navigation_bar.dart';

@@ -1,4 +1,3 @@
-import 'package:doctor_hunt/data/dto/find_doctors_dto.dart';
 import 'package:doctor_hunt/data/model/doctor_model_for_find_doctors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';

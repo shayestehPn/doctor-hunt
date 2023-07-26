@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../images/svg_images.dart';
+
 
 class MedicalCategoryList extends StatelessWidget {
   const MedicalCategoryList({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../Assistance.dart';
+import '../../../utils/Assistance.dart';
 
 class PngImage{
 

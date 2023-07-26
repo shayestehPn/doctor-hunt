@@ -1,7 +1,7 @@
 import 'package:doctor_hunt/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../Assistance.dart';
+import '../../../utils/Assistance.dart';
 
 
 class SvgImage {

@@ -10,12 +10,14 @@ class EmptyTimeSlotsContent extends StatelessWidget {
 
   final String nextAvailabilityDate;
   final Function() contactButtonOnClick;
+  final Function() greenButtonOnClick;
 
 
   const EmptyTimeSlotsContent({
     super.key,
     required this.nextAvailabilityDate,
-    required this.contactButtonOnClick
+    required this.contactButtonOnClick,
+    required this.greenButtonOnClick
   });
 
   @override
@@ -36,7 +38,9 @@ class EmptyTimeSlotsContent extends StatelessWidget {
             height: 54.h,
             width: 306.w,
             text: "Next availability $nextAvailabilityDate",
-            onClick: (){}
+            onClick: (){
+              greenButtonOnClick();
+            }
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 13.h),

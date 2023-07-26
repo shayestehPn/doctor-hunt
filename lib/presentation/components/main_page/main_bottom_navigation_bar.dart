@@ -1,10 +1,6 @@
-import 'package:doctor_hunt/business_logic/main_page/main_page_cubit.dart';
-import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constants/styles.dart';
 import 'navigation_bar_item.dart';
 

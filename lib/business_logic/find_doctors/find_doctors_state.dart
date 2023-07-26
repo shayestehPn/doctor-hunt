@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import '../../data/dto/find_doctors_dto.dart';
 
+
 abstract class FindDoctorsState extends Equatable{    //we cant make instance of abstract class
 
   const FindDoctorsState();

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 class AppStyles{
 
+  //radiuses
   static BorderRadius cardBorderRadius= BorderRadius.circular(6);
 
   static BorderRadius bottomNavigationBarBorderRadius= const BorderRadius.only(
     topRight: Radius.circular(20),
     topLeft: Radius.circular(20)
   );
+
+  // fonts
 
   static FontWeight thinFont=FontWeight.w100;
   static FontWeight extraLightFont=FontWeight.w200;
@@ -17,4 +20,6 @@ class AppStyles{
   static FontWeight semiBoldFont=FontWeight.w600;
   static FontWeight boldFont=FontWeight.w700;
   static FontWeight extraBoldFont=FontWeight.w800;
+
+
 }

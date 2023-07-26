@@ -1,12 +1,12 @@
 import 'package:doctor_hunt/data/model/doctor_model_for_select_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constants/colors.dart';
 import '../../../constants/styles.dart';
 import '../five_stars.dart';
 import '../images/svg_images.dart';
 import '../network_image.dart';
+
 
 class DoctorCardOnSelectTime extends StatelessWidget {
 

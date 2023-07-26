@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import '../../../Assistance.dart';
+import '../../../utils/Assistance.dart';
 
 
 class Gif{

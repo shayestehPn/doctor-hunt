@@ -3,7 +3,6 @@ import 'package:doctor_hunt/constants/styles.dart';
 import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../button_with_touch_point.dart';
 
 class FindDoctorTextField extends StatelessWidget {

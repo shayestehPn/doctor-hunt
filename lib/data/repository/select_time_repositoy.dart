@@ -65,7 +65,8 @@ class SelectTimeRepository{
     ),
         availableDatesList: availableDatesList,
         nextAvailabilityDate: DateModel(id: '', year: '', month: '', day: ''),
-      clinicPhoneNumber: "04132834290"
+      clinicPhoneNumber: "04132834290",
+        nextAvailabilityDateIndex: 0
 
     );
   }

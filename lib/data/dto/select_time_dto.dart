@@ -16,23 +16,26 @@ class SelectTimeDto{
   );
   List<DateModelForBooking> availableDatesList=[];
   DateModel nextAvailabilityDate=DateModel(id: '', year: '', month: '', day: '');
+  int nextAvailabilityDateIndex=-1;
   String clinicPhoneNumber="";
 
 
 
-  SelectTimeDto({required this.doctorModel,required this.availableDatesList,required this.nextAvailabilityDate,required this.clinicPhoneNumber});
+  SelectTimeDto({required this.doctorModel,required this.availableDatesList,required this.nextAvailabilityDate,required this.clinicPhoneNumber,required this.nextAvailabilityDateIndex});
 
   SelectTimeDto copyWith({
     DoctorModelForSelectTime? doctorModel,
     List<DateModelForBooking>? availableDatesList,
     DateModel? nextAvailabilityDate,
-    String? clinicPhoneNumber
+    String? clinicPhoneNumber,
+    int? nextAvailabilityDateIndex
   }) {
     return SelectTimeDto(
       doctorModel: doctorModel??this.doctorModel,
       availableDatesList: availableDatesList??this.availableDatesList,
         nextAvailabilityDate: nextAvailabilityDate??this.nextAvailabilityDate,
-        clinicPhoneNumber: clinicPhoneNumber??this.clinicPhoneNumber
+        clinicPhoneNumber: clinicPhoneNumber??this.clinicPhoneNumber,
+        nextAvailabilityDateIndex: nextAvailabilityDateIndex??this.nextAvailabilityDateIndex
 
     );
   }

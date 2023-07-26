@@ -3,16 +3,16 @@ import 'package:doctor_hunt/data/model/date_model.dart';
 
 class DoctorModelForFindDoctors{
 
-  late String name;
-  late String id="0";
-  late String medicalCategory;
-  late String yearsOfExperience;
-  late double satisfyPercent;
-  late int numberOfPreviousPatients;
-  late String imageUrl;
-  late DateModel nextAvailableDate;
-  late String nextAvailableTime;
-  late bool isLikedByUser=false;
+   String name;
+   String id="0";
+   String medicalCategory;
+   String yearsOfExperience;
+   double satisfyPercent;
+   int numberOfPreviousPatients;
+   String imageUrl;
+   DateModel nextAvailableDate;
+   String nextAvailableTime;
+   bool isLikedByUser=false;
 
   DoctorModelForFindDoctors({
     required this.id,

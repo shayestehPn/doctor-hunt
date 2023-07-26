@@ -2,8 +2,8 @@ import 'package:doctor_hunt/data/model/date_model_for_booking.dart';
 import 'package:doctor_hunt/data/model/date_model.dart';
 import 'package:doctor_hunt/data/model/doctor_model_for_select_time.dart';
 import 'package:doctor_hunt/data/model/time_model.dart';
-
 import '../dto/select_time_dto.dart';
+
 
 class SelectTimeRepository{
 
@@ -12,7 +12,7 @@ class SelectTimeRepository{
     List<DateModelForBooking> availableDatesList=[];
     availableDatesList.add(
         DateModelForBooking(
-            date: DateModel(id: '0', year: '2023', month: 'March', day: '21') ,
+            date: DateModel(id: '0', year: '2023', month: 'March', day: '20') ,
             timeSlotsList: [
               TimeModel(id: "9", time: "7:34", type: "AM")
             ]
@@ -20,26 +20,37 @@ class SelectTimeRepository{
     );
     availableDatesList.add(
         DateModelForBooking(
-            date: DateModel(id: '0', year: '2023', month: 'May', day: '2') ,
+            date: DateModel(id: '0', year: '2023', month: 'March', day: '21') ,
+            timeSlotsList: []
+        )
+    );
+    availableDatesList.add(
+        DateModelForBooking(
+            date: DateModel(id: '0', year: '2023', month: 'March', day: '22') ,
             timeSlotsList: [
-              TimeModel(id: "8", time: "6:21", type: "PM")
+              TimeModel(id: "9", time: "6:23", type: "PM"),
+              TimeModel(id: "10", time: "6:50", type: "PM"),
+              TimeModel(id: "11", time: "7:30", type: "PM"),
+              TimeModel(id: "12", time: "7:53", type: "AM"),
+              TimeModel(id: "13", time: "8:50", type: "PM"),
+              TimeModel(id: "14", time: "9:30", type: "PM"),
             ]
         )
     );
     availableDatesList.add(
         DateModelForBooking(
-            date: DateModel(id: '0', year: '2023', month: 'June', day: '28') ,
+            date: DateModel(id: '0', year: '2023', month: 'March', day: '23') ,
             timeSlotsList: [
-              TimeModel(id: "9", time: "8:23", type: "PM"),
-              TimeModel(id: "0", time: "9:20", type: "AM"),
-              TimeModel(id: "0", time: "7:30", type: "AM"),
+              TimeModel(id: "9", time: "6:23", type: "AM"),
+              TimeModel(id: "0", time: "6:50", type: "PM"),
+              TimeModel(id: "0", time: "7:30", type: "PM"),
             ]
         )
     );
 
     availableDatesList.add(
         DateModelForBooking(
-            date: DateModel(id: '60', year: '2023', month: 'July', day: '9') ,
+            date: DateModel(id: '60', year: '2023', month: 'March', day: '24') ,
             timeSlotsList: []
         )
     );
@@ -53,6 +64,8 @@ class SelectTimeRepository{
         isLikedByUser: true
     ),
         availableDatesList: availableDatesList,
+        nextAvailabilityDate: DateModel(id: '', year: '', month: '', day: ''),
+      clinicPhoneNumber: "04132834290"
 
     );
   }

@@ -3,8 +3,8 @@ import 'package:doctor_hunt/data/model/time_model.dart';
 
 class DateModelForBooking{
 
-  late DateModel date;
-  late List<TimeModel> timeSlotsList;
+   DateModel date;
+   List<TimeModel> timeSlotsList;
 
   DateModelForBooking({required this.date,required this.timeSlotsList});
 

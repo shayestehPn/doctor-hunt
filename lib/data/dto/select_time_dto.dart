@@ -1,6 +1,8 @@
+import 'package:doctor_hunt/data/model/date_model.dart';
 import '../../constants/strings.dart';
 import '../model/date_model_for_booking.dart';
 import '../model/doctor_model_for_select_time.dart';
+
 
 class SelectTimeDto{
 
@@ -13,19 +15,25 @@ class SelectTimeDto{
       isLikedByUser: false
   );
   List<DateModelForBooking> availableDatesList=[];
+  DateModel nextAvailabilityDate=DateModel(id: '', year: '', month: '', day: '');
+  String clinicPhoneNumber="";
 
 
 
-  SelectTimeDto({required this.doctorModel,required this.availableDatesList});
+  SelectTimeDto({required this.doctorModel,required this.availableDatesList,required this.nextAvailabilityDate,required this.clinicPhoneNumber});
 
   SelectTimeDto copyWith({
     DoctorModelForSelectTime? doctorModel,
     List<DateModelForBooking>? availableDatesList,
-    int? selectedDateIndex
+    DateModel? nextAvailabilityDate,
+    String? clinicPhoneNumber
   }) {
     return SelectTimeDto(
       doctorModel: doctorModel??this.doctorModel,
       availableDatesList: availableDatesList??this.availableDatesList,
+        nextAvailabilityDate: nextAvailabilityDate??this.nextAvailabilityDate,
+        clinicPhoneNumber: clinicPhoneNumber??this.clinicPhoneNumber
+
     );
   }
 

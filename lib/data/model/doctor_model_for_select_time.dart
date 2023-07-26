@@ -1,9 +1,9 @@
 class DoctorModelForSelectTime{
-  late String name;
-  late String imageUrl;
-  late String officeAddress;
-  late double score;
-  late bool isLikedByUser;
+   String name;
+   String imageUrl;
+   String officeAddress;
+   double score;
+   bool isLikedByUser;
 
   DoctorModelForSelectTime({
     required this.name,

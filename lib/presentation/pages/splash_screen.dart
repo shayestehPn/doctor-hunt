@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:doctor_hunt/business_logic/splash_screen/splash_cubit.dart';
 import 'package:doctor_hunt/presentation/components/images/png_images.dart';
+import 'package:doctor_hunt/presentation/components/stack_with_blurs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,7 +13,6 @@ import '../components/images/svg_images.dart';
 
 class SplashScreen extends StatelessWidget {
 
-  SplashCubit homeCubit=SplashCubit();
   late Timer myTimer;
 
   @override
@@ -41,7 +41,10 @@ class SplashScreen extends StatelessWidget {
             }
           },
           builder: (context, homeState) {
-            return Scaffold(
+            return StackWithBlurs(
+              showGreenBlur: true,
+                showBlueBlur: true,
+                pageContent: Scaffold(
                 body: Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
@@ -78,6 +81,7 @@ class SplashScreen extends StatelessWidget {
                       ],
                     )
                 )
+            )
             );
           },
         ),

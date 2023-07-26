@@ -1,6 +1,7 @@
 import 'package:doctor_hunt/business_logic/on_branding/on_branding_cubit.dart';
 import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
 import 'package:doctor_hunt/presentation/components/images/png_images.dart';
+import 'package:doctor_hunt/presentation/components/stack_with_blurs.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_first.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_second.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_third.dart';
@@ -36,68 +37,61 @@ class OnBrandingPage extends StatelessWidget {
       },
       child: BlocBuilder<OnBrandingCubit, OnBrandingState>(
         builder: (BuildContext context, state) {
-          return Scaffold(
-            body:  Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
-                ),
-                PageView.builder(
-                    itemCount: pageViewItems.length,
-                    scrollDirection: Axis.horizontal,
-                    physics: const NeverScrollableScrollPhysics(),
+          return StackWithBlurs(
+              showBlueBlur: false,
+              showGreenBlur: true,
+              pageContent: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.white,
+                  ),
+                  PageView.builder(
+                      itemCount: pageViewItems.length,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
 
-                    controller: controller,
-                    itemBuilder: (context, position) {
-                      return pageViewItems[position];
-                    }
-                ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: 134.h,
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CustomSolidGreenButton(
-                          height: 54.h,
-                          width: 295.w,
-                          onClick: (){
-                            Get.toNamed(Routes.mainPage);
-                          },
-                          text: "Get started",
-                        ),
-                        CustomTransparentButton(
+                      controller: controller,
+                      itemBuilder: (context, position) {
+                        return pageViewItems[position];
+                      }
+                  ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 134.h,
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomSolidGreenButton(
                             height: 54.h,
                             width: 295.w,
-                            text: "skip",
                             onClick: (){
-                              goToNext(context,state);
-                            }
-                        ),
-                        SizedBox(height: 43.h,)
-                      ],
-                    ),
-                    Positioned(
-                      bottom: -10.h,
-                      right: -20.w,
-                      child: SizedBox(
-                        height: 116.w,
-                        width: 116.w,
-                        child: PngImage.greenBlurPng,
+                              Get.toNamed(Routes.mainPage);
+                            },
+                            text: "Get started",
+                          ),
+                          CustomTransparentButton(
+                              height: 54.h,
+                              width: 295.w,
+                              text: "skip",
+                              onClick: (){
+                                goToNext(context,state);
+                              }
+                          ),
+                          SizedBox(height: 43.h,)
+                        ],
                       ),
-                    )
-                  ],
-                )
-              ],
-            ),
+                    ],
+                  )
+                ],
+              ),
           );
         },
       ),

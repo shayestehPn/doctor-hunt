@@ -120,7 +120,7 @@ class SelectTimePage extends StatelessWidget {
                                              UrlLauncher.launch("tel://${state.dto.clinicPhoneNumber}");
                                            },
                                          greenButtonOnClick: () {
-
+                                           context.read<SelectTimeCubit>().selectDate(state.dto.nextAvailabilityDateIndex);
                                          },
                                        )
                                        :Container()

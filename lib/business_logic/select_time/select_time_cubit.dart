@@ -2,8 +2,8 @@ import 'package:doctor_hunt/business_logic/select_time/select_time_state.dart';
 import 'package:doctor_hunt/data/model/date_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-
 import '../../data/repository/select_time_repositoy.dart';
+
 
 class SelectTimeCubit extends Cubit<SelectTimeState>{
 
@@ -41,16 +41,17 @@ class SelectTimeCubit extends Cubit<SelectTimeState>{
   }
 
   Future<void> findNextAvailableDate(int startIndex) async {
-    DateModel dateModel=DateModel(id: "", year: " ", month: " ", day: " ");
+    DateModel dateModel=DateModel(id: "", year: "", month: "", day: "");
     for(int i=startIndex;i<(state as Success).dto.availableDatesList.length;i++){
       if((state as Success).dto.availableDatesList[i].timeSlotsList.isNotEmpty){
         dateModel.month=(state as Success).dto.availableDatesList[i].date.month;
         dateModel.day=(state as Success).dto.availableDatesList[i].date.day;
       }
     }
-    dateModel.month="later";
     emit((state as Success).copyWith(dto: (state as Success).dto.copyWith(nextAvailabilityDate: dateModel)));
   }
+
+
 
 
 }

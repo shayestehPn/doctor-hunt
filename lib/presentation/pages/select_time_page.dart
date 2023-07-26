@@ -1,8 +1,4 @@
-
-import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/constants/styles.dart';
-import 'package:doctor_hunt/presentation/components/custom_bordered_button.dart';
-import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
 import 'package:doctor_hunt/presentation/components/select_time_page/empty_time_slots_content.dart';
 import 'package:doctor_hunt/presentation/components/select_time_page/time_slots_list.dart';
 import 'package:flutter/material.dart';
@@ -116,10 +112,16 @@ class SelectTimePage extends StatelessWidget {
                                           },
                                         ):
                                        EmptyTimeSlotsContent(
-                                           nextAvailabilityDate: "${state.dto.nextAvailabilityDate.month} ${state.dto.nextAvailabilityDate.day}",
+                                           nextAvailabilityDate:
+                                           state.dto.nextAvailabilityDate.month!=""?
+                                           "${state.dto.nextAvailabilityDate.month} ${state.dto.nextAvailabilityDate.day}"
+                                               :"later",
                                            contactButtonOnClick: (){
                                              UrlLauncher.launch("tel://${state.dto.clinicPhoneNumber}");
-                                           }
+                                           },
+                                         greenButtonOnClick: () {
+
+                                         },
                                        )
                                        :Container()
                                   ],

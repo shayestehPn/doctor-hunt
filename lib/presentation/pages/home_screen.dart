@@ -15,7 +15,6 @@ import '../components/home_screen/medical_category_list.dart';
 import '../components/home_screen/doctor_title.dart';
 import '../components/home_screen/popular_doctors_list.dart';
 import '../components/home_screen/search_card.dart';
-import '../components/images/png_images.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -80,13 +79,22 @@ class HomeScreen extends StatelessWidget {
                                          liveDoctorsList: state.dto.liveDoctorsList
                                      ),
                                      const MedicalCategoryList(),
-                                     const DoctorTitle(title: "Popular Doctor"),
+                                      DoctorTitle(title: "Popular Doctor",
+                                       seeMoreOnClick: () {
+                                       Get.toNamed(Routes.popularDoctorsPage);
+                                       },
+                                     ),
                                      PopularDoctorsList(
                                          popularDoctorsList: state.dto.popularDoctorsList
                                      ),
                                      Padding(
                                          padding: EdgeInsets.only(top: 31.h),
-                                         child: const DoctorTitle(title: "Feature Doctor")
+                                         child: DoctorTitle(
+                                           title: "Feature Doctor",
+                                           seeMoreOnClick: () {
+
+                                           },
+                                         )
                                      ),
                                      FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
                                      SizedBox(height: 100.h)
@@ -105,81 +113,6 @@ class HomeScreen extends StatelessWidget {
                    ],
                  )
                );
-               // return  Scaffold(
-               //   body: Material(
-               //     child: Stack(
-               //       children: [
-               //         Positioned(
-               //           top: 140.h,
-               //           left: -20.w,
-               //           child: SizedBox(
-               //             height: 216.w,
-               //             width: 216.w,
-               //             child: PngImage.blueBlurPng,
-               //           ),
-               //         ),
-               //         Positioned(
-               //           right: 0,
-               //           bottom: 0,
-               //           child: SizedBox(
-               //             height: 242.w,
-               //             width: 242.w,
-               //             child: PngImage.greenBlurPng,
-               //           ),
-               //         ),
-               //         Column(
-               //           children: [
-               //             HomeAppBar(
-               //                 userImageUrl: state.dto.userImageUrl,
-               //                 userName: state.dto.userName
-               //             ),
-               //             Expanded(
-               //                 child: ListView(
-               //                   padding: const EdgeInsets.all(0),
-               //                   children: [
-               //                     Column(
-               //                       crossAxisAlignment: CrossAxisAlignment.start,
-               //                       children: [
-               //                         Padding(
-               //                           padding: EdgeInsets.only(left: 20.w,top: 54.h),
-               //                           child: Text("Live Doctors",
-               //                           style: TextStyle(
-               //                               fontSize: 18.sp,
-               //                               fontWeight: FontWeight.w500,
-               //                               color: Colors.black
-               //                           ),
-               //                         ),
-               //                         ),
-               //                         LiveDoctorsList(
-               //                             liveDoctorsList: state.dto.liveDoctorsList
-               //                         ),
-               //                         const MedicalCategoryList(),
-               //                         const DoctorTitle(title: "Popular Doctor"),
-               //                         PopularDoctorsList(
-               //                           popularDoctorsList: state.dto.popularDoctorsList
-               //                         ),
-               //                         Padding(
-               //                           padding: EdgeInsets.only(top: 31.h),
-               //                             child: const DoctorTitle(title: "Feature Doctor")
-               //                         ),
-               //                         FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
-               //                         SizedBox(height: 100.h)
-               //                       ],
-               //                     )
-               //                   ],
-               //                 )
-               //             )
-               //           ],
-               //         ),
-               //          SearchCard(
-               //           onClick: (){
-               //             Get.toNamed(Routes.findDoctorsPage);
-               //           },
-               //         )
-               //       ],
-               //     ),
-               //   ),
-               // );
              }
              else{
                return Container();

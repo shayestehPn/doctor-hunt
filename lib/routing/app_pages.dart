@@ -4,6 +4,7 @@ import 'package:doctor_hunt/presentation/pages/find_doctors_page.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
 import 'package:doctor_hunt/presentation/pages/main_page.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_page.dart';
+import 'package:doctor_hunt/presentation/pages/popular_doctors_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import '../presentation/pages/select_time_page.dart';
@@ -51,6 +52,12 @@ final appPages = [
   GetPage(
       name: Routes.selectTimePage,
       page: () =>   const SelectTimePage(),
+      binding: BindingClass()
+  ),
+
+  GetPage(
+      name: Routes.popularDoctorsPage,
+      page: () =>   const PopularDoctorsPage(),
       binding: BindingClass()
   ),
 

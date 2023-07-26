@@ -5,7 +5,7 @@ import '../model/doctor_featured_model.dart';
 
 class HomeRepository{
 
-  getHome(){
+  getData(){
     
     List<DoctorLiveModel> liveDoctorsList=[];
     liveDoctorsList.add(DoctorLiveModel(id: "0", imageUrl: "https://www.eatthis.com/wp-content/uploads/sites/4/2022/02/doctor-male-mature.jpg?quality=82&strip=1"));
@@ -20,14 +20,16 @@ class HomeRepository{
         name:  "Samin Hakimi",
         imageUrl: "https://doctorsns.com/sites/default/files/styles/manual_teaser_squareish_large/public/2023-06/news/halifaxrealestatephotography_0.jpg?itok=pj24tfDy",
         score: 2.8,
-        medicalCategory: "dentist specialist")
+        medicalCategory: "dentist specialist",
+        numberOfViews: 0)
     );
     popularDoctorsList.add(DoctorPopularModel(
         id: "56",
         name:  "Ali Hasani",
         imageUrl: "https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj",
         score: 3.1,
-        medicalCategory: "heart specialist")
+        medicalCategory: "heart specialist",
+        numberOfViews: 0)
     );
 
     List<DoctorFeaturedModel> featuredDoctorsList=[];

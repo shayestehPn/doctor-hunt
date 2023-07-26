@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashCubit extends Cubit<SplashState> {
 
-  final SplashRepository _loginRepository=Get.find();
+  final SplashRepository myRepository=Get.find();
 
   SplashCubit() : super(const Initial());
 

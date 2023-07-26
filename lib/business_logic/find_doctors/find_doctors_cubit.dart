@@ -7,7 +7,7 @@ import 'find_doctors_state.dart';
 
 class FindDoctorsCubit extends Cubit<FindDoctorsState>{
 
-  final FindDoctorsRepository _findDoctorsRepository=Get.find();
+  final FindDoctorsRepository myRepository=Get.find();
 
   FindDoctorsCubit() : super(const Initial());
 
@@ -17,7 +17,7 @@ class FindDoctorsCubit extends Cubit<FindDoctorsState>{
 
     emit( Loading() );
 
-    final result = await _findDoctorsRepository.getData();
+    final result = await myRepository.getData();
 
     if(result.error==""){
 

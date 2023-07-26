@@ -7,14 +7,14 @@ import '../../data/repository/select_time_repositoy.dart';
 
 class SelectTimeCubit extends Cubit<SelectTimeState>{
 
-  final SelectTimeRepository _findDoctorsRepository=Get.find();
+  final SelectTimeRepository myRepository=Get.find();
 
   SelectTimeCubit() : super(const Initial());
 
 
   getData() async {
     emit( Loading() );
-    final result = await _findDoctorsRepository.getData();
+    final result = await myRepository.getData();
     if(result.error==""){
       emit( Success(dto: result,selectedDateIndex: 0,selectedTimeSlotIndex: 0));
     }

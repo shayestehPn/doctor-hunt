@@ -63,6 +63,15 @@ class SelectTimePage extends StatelessWidget {
                               child: PngImage.blueBlurPng,
                             ),
                           ),
+                          Positioned(
+                            right: 0,
+                            bottom: -20.h,
+                            child: SizedBox(
+                              height: 242.w,
+                              width: 242.w,
+                              child: PngImage.greenBlurPng,
+                            ),
+                          ),
                           Column(
                             children: [
                                AppBarWithBackAndMagnifier(
@@ -120,7 +129,10 @@ class SelectTimePage extends StatelessWidget {
                                              UrlLauncher.launch("tel://${state.dto.clinicPhoneNumber}");
                                            },
                                          greenButtonOnClick: () {
-                                           context.read<SelectTimeCubit>().selectDate(state.dto.nextAvailabilityDateIndex);
+                                             if(state.dto.nextAvailabilityDateIndex!=-1){
+                                               context.read<SelectTimeCubit>().selectDate(state.dto.nextAvailabilityDateIndex);
+                                             }
+
                                          },
                                        )
                                        :Container()

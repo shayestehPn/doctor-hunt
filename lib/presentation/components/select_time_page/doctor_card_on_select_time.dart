@@ -1,8 +1,9 @@
-import 'package:doctor_hunt/data/model/doctor_model_for_select_time.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/styles.dart';
+import '../../../data/model/doctor_model.dart';
 import '../five_stars.dart';
 import '../images/svg_images.dart';
 import '../network_image.dart';
@@ -10,7 +11,7 @@ import '../network_image.dart';
 
 class DoctorCardOnSelectTime extends StatelessWidget {
 
-  final DoctorModelForSelectTime model;
+  final DoctorModel model;
 
   const DoctorCardOnSelectTime({super.key, required this.model});
 

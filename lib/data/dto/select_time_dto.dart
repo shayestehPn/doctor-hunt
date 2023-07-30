@@ -1,18 +1,19 @@
 import 'package:doctor_hunt/data/model/date_model.dart';
 import '../../constants/strings.dart';
 import '../model/date_model_for_booking.dart';
-import '../model/doctor_model_for_select_time.dart';
+import '../model/doctor_model.dart';
 
 
 class SelectTimeDto{
 
   String error="";
-  DoctorModelForSelectTime doctorModel=DoctorModelForSelectTime(
+  DoctorModel doctorModel=DoctorModel.selectTime(
       name: '',
       officeAddress: '',
       imageUrl: '',
       score: 0.0,
-      isLikedByUser: false
+      isLikedByUser: false,
+      id: '0'
   );
   List<DateModelForBooking> availableDatesList=[];
   DateModel nextAvailabilityDate=DateModel(id: '', year: '', month: '', day: '');
@@ -24,7 +25,7 @@ class SelectTimeDto{
   SelectTimeDto({required this.doctorModel,required this.availableDatesList,required this.nextAvailabilityDate,required this.clinicPhoneNumber,required this.nextAvailabilityDateIndex});
 
   SelectTimeDto copyWith({
-    DoctorModelForSelectTime? doctorModel,
+    DoctorModel? doctorModel,
     List<DateModelForBooking>? availableDatesList,
     DateModel? nextAvailabilityDate,
     String? clinicPhoneNumber,

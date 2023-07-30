@@ -22,7 +22,7 @@ class FavoriteDoctorCard extends StatelessWidget {
               color: const Color(0xffC9C5CA).withOpacity(0.2),
               blurRadius: 3,
               spreadRadius: 1,
-              offset: const Offset(1, 1),
+              offset: const Offset(1, 1)
             )
           ],
         color: Colors.white

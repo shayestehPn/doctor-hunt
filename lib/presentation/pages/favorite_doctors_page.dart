@@ -79,11 +79,16 @@ class FavoriteDoctorsPage extends StatelessWidget {
                                       padding: EdgeInsets.only(top: 31.h),
                                       child: DoctorTitle(
                                         title: "Feature Doctor",
-                                        seeMoreOnClick: () {},
+                                        seeMoreOnClick: () {
+
+                                        },
                                       )
                                   ),
                                   FeaturedDoctorsList(
-                                      featuredDoctorsList: state.dto.featuredDoctorsList
+                                      featuredDoctorsList: state.dto.featuredDoctorsList,
+                                    itemOnClick: (int index) {
+                                        context.read<FavoriteDoctorsCubit>().toggleFeaturedDoctorLike(index);
+                                    },
                                   ),
                                   SizedBox(height: 100.h)
                                 ],

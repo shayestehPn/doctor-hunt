@@ -1,4 +1,5 @@
 import 'package:doctor_hunt/data/model/doctor_favorite_model.dart';
+import 'package:doctor_hunt/data/model/doctor_featured_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../data/repository/favorite_doctors_repository.dart';
@@ -10,7 +11,6 @@ class FavoriteDoctorsCubit extends Cubit<FavoriteDoctorsState>{
   final FavoriteDoctorsRepository myRepository=Get.find();
 
   FavoriteDoctorsCubit() : super(const Initial());
-
 
 
   getData() async {
@@ -33,6 +33,14 @@ class FavoriteDoctorsCubit extends Cubit<FavoriteDoctorsState>{
       }
     }
     emit(Success(dto:( state as Success).dto.copyWith(searchedDoctorsList: doctorList )));
+  }
+
+
+
+  void toggleFeaturedDoctorLike(int index){
+    List<DoctorFeaturedModel> featuredDoctorsList=(state as Success).dto.featuredDoctorsList;
+    featuredDoctorsList[index].isLikedByUser=!featuredDoctorsList[index].isLikedByUser;
+    emit(Success(dto:( state as Success).dto.copyWith(featuredDoctorsList: featuredDoctorsList )));
   }
 
 

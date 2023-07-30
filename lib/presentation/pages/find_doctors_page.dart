@@ -1,14 +1,13 @@
 import 'package:doctor_hunt/business_logic/find_doctors/find_doctors_cubit.dart';
 import 'package:doctor_hunt/presentation/components/find_doctors_page/found_doctors_list.dart';
+import 'package:doctor_hunt/presentation/components/stack_with_blurs.dart';
 import 'package:doctor_hunt/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../business_logic/find_doctors/find_doctors_state.dart';
 import '../components/find_doctors_page/find_doctor_app_bar.dart';
 import '../components/find_doctors_page/find_doctor_search_text_field.dart';
-import '../components/images/png_images.dart';
 import '../components/loading_dilaog.dart';
 
 
@@ -44,58 +43,39 @@ class FindDoctorsPage extends StatelessWidget {
               return const LoadingDialog();
             }
             if(state is Success){
-              return  Scaffold(
-                  body: Material(
-                      child: Stack(
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height,
-                            width: MediaQuery.of(context).size.width,
-                            color: Colors.white,
-                          ),
-                          Positioned(
-                            top: 0,
-                            left: -20.w,
-                            child: SizedBox(
-                              height: 216.w,
-                              width: 216.w,
-                              child: PngImage.blueBlurPng,
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              FindDoctorAppBar(
-                                backOnClick: () {
-                                  Get.back();
-                                },
-                              ),
-                               FindDoctorTextField(
-                                 controller: doctorTextFieldController,
-                                 closeOnClick: () {
-                                   doctorTextFieldController.text="";
-                                 },
-                                 magnifierOnClick: () {
-                                   context.read<FindDoctorsCubit>().searchDoctor(doctorTextFieldController.text);
-                                 },
-                               ),
-                              Expanded(
-                                child: ListView(
-                                  shrinkWrap: true,
-                                  children: [
-                                  FoundDoctorsList(
-                                       doctorsList: state.dto.searchedDoctorsList,
-                                     itemBookButtonOnClick: (int index) {
-                                         Get.toNamed(Routes.selectTimePage,arguments: state.dto.searchedDoctorsList[index].id);
-                                     },
-                                   )
-                                  ],
-                                ),
-                              )
-                            ],
-
-                          )
-                        ],
+              return StackWithBlurs(
+                  showBlueBlur: true,
+                  showGreenBlur: true,
+                  pageContent: Column(
+                    children: [
+                      FindDoctorAppBar(
+                        backOnClick: () {
+                          Get.back();
+                        },
+                      ),
+                      FindDoctorTextField(
+                        controller: doctorTextFieldController,
+                        closeOnClick: () {
+                          doctorTextFieldController.text="";
+                        },
+                        magnifierOnClick: () {
+                          context.read<FindDoctorsCubit>().searchDoctor(doctorTextFieldController.text);
+                        },
+                      ),
+                      Expanded(
+                        child: ListView(
+                          shrinkWrap: true,
+                          children: [
+                            FoundDoctorsList(
+                              doctorsList: state.dto.searchedDoctorsList,
+                              itemBookButtonOnClick: (int index) {
+                                Get.toNamed(Routes.selectTimePage,arguments: state.dto.searchedDoctorsList[index].id);
+                              },
+                            )
+                          ],
+                        ),
                       )
+                    ],
                   )
               );
             }

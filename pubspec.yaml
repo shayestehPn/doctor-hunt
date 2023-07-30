@@ -104,17 +104,11 @@ flutter:
   #         weight: 700
   #
   fonts:
-    - family: vazirmatn
+    - family: Agora
       fonts:
 
-        - asset: assets/fonts/vazirmatn_light.ttf
-          weight: 300
-        - asset: assets/fonts/vazirmatn_regular.ttf
-          weight: 400
-        - asset: assets/fonts/vazirmatn_medium.ttf
-          weight: 500
-        - asset: assets/fonts/vazirmatn_bold.ttf
-          weight: 600
+        - asset: assets/fonts/PFAgoraSlabPro Bold.ttf
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -6,7 +6,7 @@ class Assistance {
   static const String jsonFilesLocation = "assets/images/json/";
   static const String pngImagesLocation = "assets/images/png/";
 
-  static const  String fontName='vazirmatn';
+  static const  String fontName='Agora';
 
 
 }

@@ -1,4 +1,5 @@
 
+import 'package:doctor_hunt/utils/Assistance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
@@ -76,7 +77,38 @@ class PopularDoctorCardOnPopularPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 6.h),
-                  FiveStars(score: model.score)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      FiveStars(score: model.score),
+                      RichText(
+                        text: TextSpan(
+                          style: const TextStyle(
+                            fontFamily: Assistance.fontName
+                          ),
+                          children:  <TextSpan>[
+                             TextSpan(
+                                text: model.score.toString(),
+                                style: TextStyle(
+                                    fontWeight: AppStyles.mediumFont,
+                                    color: AppColors.black,
+                                    fontSize: 16.sp
+                                )
+                            ),
+                            TextSpan(
+                                text: " ( ${model.numberOfViews} views )",
+                                style:  TextStyle(
+                                    fontWeight: AppStyles.normalFont,
+                                    color: AppColors.gray,
+                                  fontSize: 12.sp
+                                )
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+
                 ],
               )
           )

@@ -1,6 +1,5 @@
 
 import '../dto/favorite_doctors_dto.dart';
-import '../model/doctor_featured_model.dart';
 import '../model/doctor_model.dart';
 
 
@@ -36,9 +35,9 @@ class FavoriteDoctorsRepository{
       ),
     );
 
-    List<DoctorFeaturedModel> featuredDoctorsList=[];
+    List<DoctorModel> featuredDoctorsList=[];
 
-    featuredDoctorsList.add(DoctorFeaturedModel(
+    featuredDoctorsList.add(DoctorModel.featured(
         id: "43",
         name: "Amin Bakhshi",
         imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg",
@@ -46,7 +45,7 @@ class FavoriteDoctorsRepository{
         priceEveryHour: "22.5",
         isLikedByUser: true)
     );
-    featuredDoctorsList.add(DoctorFeaturedModel(
+    featuredDoctorsList.add(DoctorModel.featured(
         id: "78",
         name: "Fateme Hanife",
         imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg",

@@ -1,14 +1,15 @@
 import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/constants/styles.dart';
-import 'package:doctor_hunt/data/model/doctor_featured_model.dart';
 import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../data/model/doctor_model.dart';
+
 class FeaturedDoctorCard extends StatelessWidget {
 
-  final DoctorFeaturedModel model;
+  final DoctorModel model;
   final Function() onClick;
 
   const FeaturedDoctorCard({super.key, required this.model, required this.onClick});

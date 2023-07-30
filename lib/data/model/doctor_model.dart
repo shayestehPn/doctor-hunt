@@ -23,7 +23,7 @@ class DoctorModel{
     required this.medicalCategory
   });
 
-  DoctorModel.feature({
+  DoctorModel.featured({
     required this.id,
     required this.name,
     required this.imageUrl,

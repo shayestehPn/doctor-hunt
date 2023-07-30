@@ -1,6 +1,7 @@
-import 'package:doctor_hunt/data/model/doctor_featured_model.dart';
+
 import '../../constants/strings.dart';
 import '../model/doctor_live_model.dart';
+import '../model/doctor_model.dart';
 import '../model/doctor_popular_model.dart';
 
 class HomeDto{
@@ -10,7 +11,7 @@ class HomeDto{
   String userImageUrl="";
   List<DoctorLiveModel> liveDoctorsList=[];
   List<DoctorPopularModel> popularDoctorsList=[];
-  List<DoctorFeaturedModel> featuredDoctorsList=[];
+  List<DoctorModel> featuredDoctorsList=[];
 
   HomeDto({
     required this.userName,

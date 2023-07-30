@@ -1,6 +1,5 @@
 
 import '../../constants/strings.dart';
-import '../model/doctor_featured_model.dart';
 import '../model/doctor_model.dart';
 
 
@@ -9,7 +8,7 @@ class FavoriteDoctorsDto{
   String error="";
   List<DoctorModel> allDoctorsList=[];
   List<DoctorModel> searchedDoctorsList=[];
-  List<DoctorFeaturedModel> featuredDoctorsList=[];
+  List<DoctorModel> featuredDoctorsList=[];
 
 
   FavoriteDoctorsDto({required this.allDoctorsList,required this.searchedDoctorsList,required this.featuredDoctorsList});
@@ -17,7 +16,7 @@ class FavoriteDoctorsDto{
   FavoriteDoctorsDto copyWith({
     List<DoctorModel>? allDoctorsList,
     List<DoctorModel>? searchedDoctorsList,
-    List<DoctorFeaturedModel>? featuredDoctorsList
+    List<DoctorModel>? featuredDoctorsList
   }) {
     return FavoriteDoctorsDto(
       allDoctorsList: allDoctorsList??this.allDoctorsList,

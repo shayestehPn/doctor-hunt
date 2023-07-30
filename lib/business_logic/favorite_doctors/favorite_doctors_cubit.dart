@@ -1,4 +1,4 @@
-import 'package:doctor_hunt/data/model/doctor_featured_model.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../data/model/doctor_model.dart';
@@ -38,7 +38,7 @@ class FavoriteDoctorsCubit extends Cubit<FavoriteDoctorsState>{
 
 
   void toggleFeaturedDoctorLike(int index){
-    List<DoctorFeaturedModel> featuredDoctorsList=(state as Success).dto.featuredDoctorsList;
+    List<DoctorModel> featuredDoctorsList=(state as Success).dto.featuredDoctorsList;
     featuredDoctorsList[index].isLikedByUser=!featuredDoctorsList[index].isLikedByUser;
     emit(Success(dto:( state as Success).dto.copyWith(featuredDoctorsList: featuredDoctorsList )));
   }

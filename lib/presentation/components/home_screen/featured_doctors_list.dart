@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../data/model/doctor_featured_model.dart';
+import '../../../data/model/doctor_model.dart';
 import 'featured_doctor_card.dart';
 
 
 class FeaturedDoctorsList extends StatelessWidget {
 
-  final List<DoctorFeaturedModel> featuredDoctorsList;
+  final List<DoctorModel> featuredDoctorsList;
   final Function(int index) itemOnClick;
 
   const FeaturedDoctorsList({super.key, required this.featuredDoctorsList, required this.itemOnClick});

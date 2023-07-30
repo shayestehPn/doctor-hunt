@@ -14,7 +14,7 @@ class MainPage extends StatelessWidget {
 
   List pageViewItems = [
     const HomeScreen(),
-    const FavoriteDoctorsPage()
+     FavoriteDoctorsPage()
   ];
 
 

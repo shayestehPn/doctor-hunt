@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../business_logic/find_doctors/find_doctors_state.dart';
 import '../components/app_bar_with_back_and_magnifier.dart';
-import '../components/find_doctors_page/find_doctor_search_text_field.dart';
+import '../components/search_text_field.dart';
 import '../components/loading_dilaog.dart';
 
 
@@ -55,7 +55,7 @@ class FindDoctorsPage extends StatelessWidget {
                         title: 'Find Trusted Doctors',
                         showMagnifier: false,
                       ),
-                      FindDoctorTextField(
+                      SearchTextField(
                         controller: doctorTextFieldController,
                         closeOnClick: () {
                           doctorTextFieldController.text="";

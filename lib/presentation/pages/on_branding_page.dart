@@ -100,12 +100,12 @@ class OnBrandingPage extends StatelessWidget {
 
   void goToNext(BuildContext context,OnBrandingState state){
     context.read<OnBrandingCubit>().increasePageNumber();
-    if(state.currentPageValue>=pageViewItems.length){
+    if(state.currentPageIndex>=pageViewItems.length){
       Get.toNamed(Routes.mainPage);
     }
     else{
       controller.animateToPage(
-        state.currentPageValue,
+        state.currentPageIndex,
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );

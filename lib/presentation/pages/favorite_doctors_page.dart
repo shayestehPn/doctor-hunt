@@ -1,16 +1,23 @@
+import 'package:doctor_hunt/presentation/components/favorite_doctors/favorite_doctors_list.dart';
+import 'package:doctor_hunt/presentation/components/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import '../../business_logic/favorite_doctors/favorite_doctors_cubit.dart';
 import '../../business_logic/favorite_doctors/favorite_doctors_state.dart';
+import '../components/app_bar_with_back_and_magnifier.dart';
 import '../components/home_screen/doctor_title.dart';
 import '../components/home_screen/featured_doctors_list.dart';
 import '../components/loading_dilaog.dart';
 import '../components/stack_with_blurs.dart';
 
+
 class FavoriteDoctorsPage extends StatelessWidget {
-  const FavoriteDoctorsPage({super.key});
+
+   FavoriteDoctorsPage({super.key});
+
+  TextEditingController controller=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,26 +51,41 @@ class FavoriteDoctorsPage extends StatelessWidget {
                     children: [
                       Column(
                         children: [
+                          AppBarWithBackAndMagnifier(
+                            backOnClick: () {
+                              Get.back();
+                            },
+                            title: 'Favorite Doctors',
+                            showMagnifier: false,
+                          ),
+                          SearchTextField(
+                              controller: controller,
+                              closeOnClick: (){
+                                controller.text="";
+                              },
+                              magnifierOnClick: (){
+                                context.read<FavoriteDoctorsCubit>().searchDoctor(controller.text.toString());
+                              }
+                          ),
                           Expanded(
                               child: ListView(
                                 padding: const EdgeInsets.all(0),
                                 children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: EdgeInsets.only(top: 31.h),
-                                          child: DoctorTitle(
-                                            title: "Feature Doctor",
-                                            seeMoreOnClick: () {
-
-                                            },
-                                          )
-                                      ),
-                                      FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
-                                      SizedBox(height: 100.h)
-                                    ],
-                                  )
+                                  FavoriteDoctorsList(
+                                      doctorsList: state.dto.searchedDoctorsList.isNotEmpty?
+                                      state.dto.searchedDoctorsList: state.dto.allDoctorsList
+                                  ),
+                                  Padding(
+                                      padding: EdgeInsets.only(top: 31.h),
+                                      child: DoctorTitle(
+                                        title: "Feature Doctor",
+                                        seeMoreOnClick: () {},
+                                      )
+                                  ),
+                                  FeaturedDoctorsList(
+                                      featuredDoctorsList: state.dto.featuredDoctorsList
+                                  ),
+                                  SizedBox(height: 100.h)
                                 ],
                               )
                           )

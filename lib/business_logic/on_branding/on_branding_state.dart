@@ -1,17 +1,17 @@
  class OnBrandingState {
 
-   int currentPageValue;
+   int currentPageIndex;
 
-   OnBrandingState({required this.currentPageValue});
+   OnBrandingState({required this.currentPageIndex});
 
    @override
-   List<Object?> get props => [currentPageValue];
+   List<Object?> get props => [currentPageIndex];
 
    OnBrandingState copyWith({
-   int? currentPageValue
+   int? currentPageIndex
    }) {
      return OnBrandingState(
-       currentPageValue: currentPageValue?? this.currentPageValue,
+       currentPageIndex: currentPageIndex?? this.currentPageIndex,
      );
    }
 

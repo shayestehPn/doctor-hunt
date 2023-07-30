@@ -53,6 +53,7 @@ class FindDoctorTextField extends StatelessWidget {
             onClick: () {
               magnifierOnClick();
             },
+            alignmentOfWidgetOnStack: Alignment.center,
           ),
           Expanded(
               child: TextField(
@@ -88,6 +89,7 @@ class FindDoctorTextField extends StatelessWidget {
                   onClick: () {
                     closeOnClick();
                   },
+                  alignmentOfWidgetOnStack: Alignment.center,
                 ),
               )
           )

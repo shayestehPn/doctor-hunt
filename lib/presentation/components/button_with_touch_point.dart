@@ -6,13 +6,15 @@ class ButtonWithTouchPoint extends StatelessWidget {
   final  double touchingAreaHeight;
   final double touchingAreaWidth;
   final Function() onClick;
+  final Alignment alignmentOfWidgetOnStack;
 
   const ButtonWithTouchPoint({
     super.key,
     required this.buttonWidget,
     required this.touchingAreaHeight,
     required this.touchingAreaWidth,
-    required this.onClick
+    required this.onClick,
+    required this.alignmentOfWidgetOnStack
   });
 
   @override
@@ -22,7 +24,7 @@ class ButtonWithTouchPoint extends StatelessWidget {
         onClick();
       },
       child: Stack(
-        alignment: Alignment.center,
+        alignment: alignmentOfWidgetOnStack,
         children: [
           buttonWidget,
           Container(

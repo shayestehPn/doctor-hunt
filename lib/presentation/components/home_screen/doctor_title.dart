@@ -22,6 +22,7 @@ class DoctorTitle extends StatelessWidget {
           children: [
             ButtonWithTouchPoint(
                 buttonWidget: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
                       height: 6.h,
@@ -39,10 +40,11 @@ class DoctorTitle extends StatelessWidget {
                   ],
                 ),
                 touchingAreaHeight: 52.h,
-                touchingAreaWidth: 120.w,
+                touchingAreaWidth: 100.w,
                 onClick: (){
                   seeMoreOnClick();
-                }
+                },
+              alignmentOfWidgetOnStack: Alignment.centerRight,
             ),
             Expanded(
               child: Align(

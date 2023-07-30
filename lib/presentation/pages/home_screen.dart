@@ -96,7 +96,12 @@ class HomeScreen extends StatelessWidget {
                                            },
                                          )
                                      ),
-                                     FeaturedDoctorsList(featuredDoctorsList: state.dto.featuredDoctorsList),
+                                     FeaturedDoctorsList(
+                                         featuredDoctorsList: state.dto.featuredDoctorsList,
+                                       itemOnClick: (int index) {
+
+                                       },
+                                     ),
                                      SizedBox(height: 100.h)
                                    ],
                                  )

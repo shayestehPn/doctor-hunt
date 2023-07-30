@@ -7,8 +7,9 @@ import 'featured_doctor_card.dart';
 class FeaturedDoctorsList extends StatelessWidget {
 
   final List<DoctorFeaturedModel> featuredDoctorsList;
+  final Function(int index) itemOnClick;
 
-  const FeaturedDoctorsList({super.key, required this.featuredDoctorsList});
+  const FeaturedDoctorsList({super.key, required this.featuredDoctorsList, required this.itemOnClick});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,12 @@ class FeaturedDoctorsList extends StatelessWidget {
         padding: EdgeInsets.only(left: 20.w,right: 8.w),
         itemCount: featuredDoctorsList.length,
         itemBuilder: (context, index) {
-          return  FeaturedDoctorCard(model: featuredDoctorsList[index]);
+          return  FeaturedDoctorCard(
+            model: featuredDoctorsList[index],
+            onClick: () {
+              itemOnClick(index);
+            },
+          );
         },
       ),
     );

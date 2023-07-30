@@ -1,9 +1,9 @@
 class DoctorModelForSelectTime{
-   String name;
-   String imageUrl;
-   String officeAddress;
-   double score;
-   bool isLikedByUser;
+   String name="";
+   String imageUrl="";
+   String officeAddress="";
+   double score=0.0;
+   bool isLikedByUser=false;
 
   DoctorModelForSelectTime({
     required this.name,
@@ -12,4 +12,12 @@ class DoctorModelForSelectTime{
     required this.score,
     required this.isLikedByUser
   });
+
+   DoctorModelForSelectTime.empty(){
+     name="";
+     imageUrl="";
+     officeAddress="";
+     score=0.0;
+     isLikedByUser=false;
+   }
 }

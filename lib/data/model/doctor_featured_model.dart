@@ -1,11 +1,11 @@
 class DoctorFeaturedModel{
 
-  String name;
-  double score;
-  String imageUrl;
-  String id;
-  String priceEveryHour;
-  bool isLikedByUser;
+  String name="";
+  double score=0.0;
+  String imageUrl="";
+  String id="";
+  String priceEveryHour="";
+  bool isLikedByUser=false;
 
   DoctorFeaturedModel({
     required this.id,
@@ -15,5 +15,14 @@ class DoctorFeaturedModel{
     required this.priceEveryHour,
     required this.isLikedByUser
   });
+
+  DoctorFeaturedModel.empty(){
+    name="";
+    score=0.0;
+    imageUrl="";
+    id="";
+    priceEveryHour="";
+    isLikedByUser=false;
+  }
 
 }

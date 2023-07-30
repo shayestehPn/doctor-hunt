@@ -1,9 +1,9 @@
 class DoctorFavoriteModel{
 
-  String id;
-  String name;
-  String imageUrl;
-  String medicalCategory;
+  String id="";
+  String name="";
+  String imageUrl="";
+  String medicalCategory="";
 
   DoctorFavoriteModel({
     required this.id,
@@ -11,5 +11,13 @@ class DoctorFavoriteModel{
     required this.imageUrl,
     required this.medicalCategory
   });
+
+  DoctorFavoriteModel.empty(){
+    id="";
+    name="";
+    imageUrl="";
+    medicalCategory="";
+  }
+
 
 }

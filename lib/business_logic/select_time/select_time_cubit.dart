@@ -35,7 +35,7 @@ class SelectTimeCubit extends Cubit<SelectTimeState>{
 
 
   Future<void> findNextAvailableDate(int startIndex) async {
-    DateModel dateModel=DateModel(id: "", year: "", month: "", day: "");
+    DateModel dateModel=DateModel.empty();
     int nextAvailabilityDateIndex=-1;
     for(int i=startIndex;i<(state as Success).dto.availableDatesList.length;i++){
       if((state as Success).dto.availableDatesList[i].timeSlotsList.isNotEmpty){

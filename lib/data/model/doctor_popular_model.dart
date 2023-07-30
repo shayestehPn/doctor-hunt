@@ -1,13 +1,13 @@
 
 class DoctorPopularModel{
 
-  String name;
-  String id;
-  String medicalCategory;
-  double score;
-  String imageUrl;
-  int numberOfViews;
-  bool isLikedByUser;
+  String name="";
+  String id="";
+  String medicalCategory="";
+  double score=0.0;
+  String imageUrl="";
+  int numberOfViews=0;
+  bool isLikedByUser=false;
 
   DoctorPopularModel({
     required this.id,
@@ -18,5 +18,15 @@ class DoctorPopularModel{
     required this.numberOfViews,
     required this.isLikedByUser
   });
+
+  DoctorPopularModel.empty(){
+    name="";
+    id="";
+    medicalCategory="";
+    score=0.0;
+    imageUrl="";
+    numberOfViews=0;
+    isLikedByUser=false;
+  }
 
 }

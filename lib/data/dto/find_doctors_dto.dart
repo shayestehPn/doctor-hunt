@@ -1,18 +1,18 @@
 import '../../constants/strings.dart';
-import '../model/doctor_model_for_find_doctors.dart';
+import '../model/doctor_model.dart';
 
 class FindDoctorsDto{
 
   String error="";
-  List<DoctorModelForFindDoctors> doctorsList=[];
-  List<DoctorModelForFindDoctors> searchedDoctorsList=[];
+  List<DoctorModel> doctorsList=[];
+  List<DoctorModel> searchedDoctorsList=[];
 
 
   FindDoctorsDto({required this.doctorsList,required this.searchedDoctorsList});
 
   FindDoctorsDto copyWith({
-    List<DoctorModelForFindDoctors>? doctorsList,
-    List<DoctorModelForFindDoctors>? searchedDoctorsList,
+    List<DoctorModel>? doctorsList,
+    List<DoctorModel>? searchedDoctorsList,
   }) {
     return FindDoctorsDto(
       doctorsList: doctorsList??this.doctorsList,

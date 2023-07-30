@@ -1,14 +1,15 @@
-import 'package:doctor_hunt/data/model/doctor_model_for_find_doctors.dart';
+
 import '../dto/find_doctors_dto.dart';
 import '../model/date_model.dart';
+import '../model/doctor_model.dart';
 
 class FindDoctorsRepository{
 
   getData(){
 
-    List<DoctorModelForFindDoctors> doctorsList=[];
+    List<DoctorModel> doctorsList=[];
     doctorsList.add(
-      DoctorModelForFindDoctors(
+      DoctorModel.findDoctors(
           id: "59",
           name: "Ali Mokhberi",
           imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDiM_msalsv7aSV1eMDo5UiftcSmblH0SJbFZupmNTMcr9jjc9AeWTg74ZDcz3jexTCoc&usqp=CAU",
@@ -23,7 +24,7 @@ class FindDoctorsRepository{
     );
 
     doctorsList.add(
-      DoctorModelForFindDoctors(
+      DoctorModel.findDoctors(
           id: "9",
           name: "Nadia Rezayi",
           imageUrl: "https://doctorsclinichouston.com/wp-content/uploads/2014/10/slider-1.1.png",
@@ -38,7 +39,7 @@ class FindDoctorsRepository{
     );
 
     doctorsList.add(
-      DoctorModelForFindDoctors(
+      DoctorModel.findDoctors(
           id: "90",
           name: "Raze hoseini",
           imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvPCBngJxMFQvJugVSdrp26-EZQkTlWAZdhXLTa4tWSQWHjBhpihV3leeG8M-VZbi8iA&usqp=CAU",

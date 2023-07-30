@@ -1,15 +1,16 @@
-import 'package:doctor_hunt/data/model/doctor_model_for_find_doctors.dart';
+
 import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
+import '../../../data/model/doctor_model.dart';
 import '../images/svg_images.dart';
 import '../network_image.dart';
 
 
 class DoctorCardForFindDoctors extends StatelessWidget {
 
-  final DoctorModelForFindDoctors model;
+  final DoctorModel model;
   final Function() bookOnClick;
 
   const DoctorCardForFindDoctors({super.key, required this.model,required this.bookOnClick});

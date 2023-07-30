@@ -1,10 +1,10 @@
 import '../../constants/strings.dart';
-import '../model/doctor_popular_model.dart';
+import '../model/doctor_model.dart';
 
 class PopularDoctorsDto{
 
   String error="";
-  List<DoctorPopularModel> popularDoctorsList=[];
+  List<DoctorModel> popularDoctorsList=[];
 
   PopularDoctorsDto({
     required this.popularDoctorsList,

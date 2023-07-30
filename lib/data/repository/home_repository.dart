@@ -1,5 +1,4 @@
 import 'package:doctor_hunt/data/dto/home_dto.dart';
-import 'package:doctor_hunt/data/model/doctor_popular_model.dart';
 import '../model/doctor_model.dart';
 
 class HomeRepository{
@@ -13,8 +12,8 @@ class HomeRepository{
     liveDoctorsList.add(DoctorModel.live(id: "3", imageUrl: "https://media.cnn.com/api/v1/images/stellar/prod/230217092727-02-us-black-doctors-shortage.jpg?c=16x9&q=h_720,w_1280,c_fill"));
 
 
-    List<DoctorPopularModel>popularDoctorsList=[];
-    popularDoctorsList.add(DoctorPopularModel(
+    List<DoctorModel>popularDoctorsList=[];
+    popularDoctorsList.add(DoctorModel.popular(
         id: "82",
         name:  "Samin Hakimi",
         imageUrl: "https://doctorsns.com/sites/default/files/styles/manual_teaser_squareish_large/public/2023-06/news/halifaxrealestatephotography_0.jpg?itok=pj24tfDy",
@@ -24,7 +23,7 @@ class HomeRepository{
         isLikedByUser: true
     )
     );
-    popularDoctorsList.add(DoctorPopularModel(
+    popularDoctorsList.add(DoctorModel.popular(
         id: "56",
         name:  "Ali Hasani",
         imageUrl: "https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj",

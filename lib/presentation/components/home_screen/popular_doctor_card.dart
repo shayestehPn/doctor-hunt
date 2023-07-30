@@ -2,13 +2,13 @@ import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../data/model/doctor_popular_model.dart';
+import '../../../data/model/doctor_model.dart';
 import '../five_stars.dart';
 
 
 class PopularDoctorCard extends StatelessWidget {
 
-  final DoctorPopularModel model;
+  final DoctorModel model;
 
   const PopularDoctorCard({super.key, required this.model});
 

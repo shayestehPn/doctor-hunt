@@ -1,7 +1,6 @@
 
 import '../../constants/strings.dart';
 import '../model/doctor_model.dart';
-import '../model/doctor_popular_model.dart';
 
 class HomeDto{
 
@@ -9,7 +8,7 @@ class HomeDto{
   String userName="";
   String userImageUrl="";
   List<DoctorModel> liveDoctorsList=[];
-  List<DoctorPopularModel> popularDoctorsList=[];
+  List<DoctorModel> popularDoctorsList=[];
   List<DoctorModel> featuredDoctorsList=[];
 
   HomeDto({

@@ -1,11 +1,11 @@
-import 'package:doctor_hunt/data/model/doctor_popular_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../data/model/doctor_model.dart';
 import 'PopularDoctorCardOnPopularPage.dart';
 
 class PopularDoctorsListOnPopularPage extends StatelessWidget {
 
-  final List<DoctorPopularModel> doctorsList;
+  final List<DoctorModel> doctorsList;
 
   const PopularDoctorsListOnPopularPage({super.key, required this.doctorsList});
 

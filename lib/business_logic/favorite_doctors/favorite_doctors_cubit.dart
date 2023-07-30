@@ -1,7 +1,7 @@
-import 'package:doctor_hunt/data/model/doctor_favorite_model.dart';
 import 'package:doctor_hunt/data/model/doctor_featured_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import '../../data/model/doctor_model.dart';
 import '../../data/repository/favorite_doctors_repository.dart';
 import 'favorite_doctors_state.dart';
 
@@ -26,7 +26,7 @@ class FavoriteDoctorsCubit extends Cubit<FavoriteDoctorsState>{
 
 
   void searchDoctor(String searchedText){
-    List<DoctorFavoriteModel> doctorList=[];
+    List<DoctorModel> doctorList=[];
     for(var element in (state as Success).dto.allDoctorsList){
       if(element.name.contains(searchedText)||element.medicalCategory.contains(searchedText)){
         doctorList.add(element);

@@ -1,15 +1,16 @@
-import 'package:doctor_hunt/data/model/doctor_favorite_model.dart';
+
 import '../dto/favorite_doctors_dto.dart';
 import '../model/doctor_featured_model.dart';
+import '../model/doctor_model.dart';
 
 
 class FavoriteDoctorsRepository{
 
   getData(){
 
-    List<DoctorFavoriteModel> allDoctorsList=[];
+    List<DoctorModel> allDoctorsList=[];
     allDoctorsList.add(
-      DoctorFavoriteModel(
+      DoctorModel.favorite(
           id: "59",
           name: "Ali Mokhberi",
           imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDiM_msalsv7aSV1eMDo5UiftcSmblH0SJbFZupmNTMcr9jjc9AeWTg74ZDcz3jexTCoc&usqp=CAU",
@@ -18,7 +19,7 @@ class FavoriteDoctorsRepository{
     );
 
     allDoctorsList.add(
-      DoctorFavoriteModel(
+      DoctorModel.favorite(
           id: "9",
           name: "Nadia Rezayi",
           imageUrl: "https://doctorsclinichouston.com/wp-content/uploads/2014/10/slider-1.1.png",
@@ -27,7 +28,7 @@ class FavoriteDoctorsRepository{
     );
 
     allDoctorsList.add(
-      DoctorFavoriteModel(
+      DoctorModel.favorite(
           id: "90",
           name: "Raze hoseini",
           imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvPCBngJxMFQvJugVSdrp26-EZQkTlWAZdhXLTa4tWSQWHjBhpihV3leeG8M-VZbi8iA&usqp=CAU",

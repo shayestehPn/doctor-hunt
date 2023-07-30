@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../data/model/doctor_favorite_model.dart';
+import '../../../data/model/doctor_model.dart';
 import 'favorite_doctor_card.dart';
 
 class FavoriteDoctorsList extends StatelessWidget {
 
-  final List<DoctorFavoriteModel> doctorsList;
+  final List<DoctorModel> doctorsList;
 
   const FavoriteDoctorsList({super.key, required this.doctorsList});
 

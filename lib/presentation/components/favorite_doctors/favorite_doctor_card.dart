@@ -1,14 +1,15 @@
 import 'package:doctor_hunt/constants/colors.dart';
 import 'package:doctor_hunt/constants/styles.dart';
-import 'package:doctor_hunt/data/model/doctor_favorite_model.dart';
 import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../data/model/doctor_model.dart';
+
 class FavoriteDoctorCard extends StatelessWidget {
 
-  final DoctorFavoriteModel doctorModel;
+  final DoctorModel doctorModel;
 
   const FavoriteDoctorCard({super.key, required this.doctorModel});
 

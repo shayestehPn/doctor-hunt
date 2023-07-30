@@ -1,3 +1,4 @@
+import 'package:doctor_hunt/presentation/pages/favorite_doctors_page.dart';
 import 'package:doctor_hunt/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,8 @@ class MainPage extends StatelessWidget {
   PageController controller = PageController( keepPage: true);
 
   List pageViewItems = [
-    const HomeScreen()
+    const HomeScreen(),
+    const FavoriteDoctorsPage()
   ];
 
 
@@ -46,14 +48,17 @@ class MainPage extends StatelessWidget {
                     }
                 ),
                 MainBottomNavigationBar(
-                  currentPageValue: state.currentPageValue,
-                  selectPage: (int pageValue) {
-                    context.read<MainPageCubit>().setCurrentPageNumber(pageValue);
-                    // controller.animateToPage(
-                    //     pageViewItems[pageValue],
-                    //     duration: const Duration(microseconds: 200),
-                    //     curve: Curves.linear
-                    // );
+                  currentPageValue: state.currentPageIndex,
+                  selectPage: (int currentPageIndex) {
+                    context.read<MainPageCubit>().setCurrentPageNumber(currentPageIndex);
+                    if(currentPageIndex!=2 && currentPageIndex !=3){
+                      controller.animateToPage(
+                         currentPageIndex,
+                          duration: const Duration(milliseconds: 200),
+                          curve: Curves.decelerate
+                      );
+                    }
+
                   },
                 ),
               ],

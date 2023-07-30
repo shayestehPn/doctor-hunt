@@ -1,17 +1,17 @@
 class MainPageState{
 
-  int currentPageValue;
+  int currentPageIndex;
 
-  MainPageState({required this.currentPageValue});
+  MainPageState({required this.currentPageIndex});
 
   @override
-  List<Object?> get props => [currentPageValue];
+  List<Object?> get props => [currentPageIndex];
 
   MainPageState copyWith({
-    int? currentPageValue
+    int? currentPageIndex
   }) {
     return MainPageState(
-      currentPageValue: currentPageValue?? this.currentPageValue,
+      currentPageIndex: currentPageIndex?? this.currentPageIndex,
     );
   }
 

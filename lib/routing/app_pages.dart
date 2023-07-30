@@ -26,12 +26,6 @@ final appPages = [
   ),
 
   GetPage(
-      name: Routes.homeScreen,
-      page: () =>  const HomeScreen(),
-      binding: BindingClass()
-  ),
-
-  GetPage(
     name: Routes.loadingDialog,
     page: () => const LoadingDialog(),
     fullscreenDialog: true,

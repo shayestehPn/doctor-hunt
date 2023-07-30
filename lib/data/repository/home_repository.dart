@@ -1,5 +1,4 @@
 import 'package:doctor_hunt/data/dto/home_dto.dart';
-import 'package:doctor_hunt/data/model/doctor_live_model.dart';
 import 'package:doctor_hunt/data/model/doctor_popular_model.dart';
 import '../model/doctor_model.dart';
 
@@ -7,11 +6,11 @@ class HomeRepository{
 
   getData(){
     
-    List<DoctorLiveModel> liveDoctorsList=[];
-    liveDoctorsList.add(DoctorLiveModel(id: "0", imageUrl: "https://www.eatthis.com/wp-content/uploads/sites/4/2022/02/doctor-male-mature.jpg?quality=82&strip=1"));
-    liveDoctorsList.add(DoctorLiveModel(id: "1", imageUrl: "https://media.istockphoto.com/id/138205019/photo/happy-healthcare-practitioner.jpg?s=612x612&w=0&k=20&c=b8kUyVtmZeW8MeLHcDsJfqqF0XiFBjq6tgBQZC7G0f0="));
-    liveDoctorsList.add(DoctorLiveModel(id: "2", imageUrl: "https://familydoctor.org/wp-content/uploads/2018/02/41808433_l.jpg"));
-    liveDoctorsList.add(DoctorLiveModel(id: "3", imageUrl: "https://media.cnn.com/api/v1/images/stellar/prod/230217092727-02-us-black-doctors-shortage.jpg?c=16x9&q=h_720,w_1280,c_fill"));
+    List<DoctorModel> liveDoctorsList=[];
+    liveDoctorsList.add(DoctorModel.live(id: "0", imageUrl: "https://www.eatthis.com/wp-content/uploads/sites/4/2022/02/doctor-male-mature.jpg?quality=82&strip=1"));
+    liveDoctorsList.add(DoctorModel.live(id: "1", imageUrl: "https://media.istockphoto.com/id/138205019/photo/happy-healthcare-practitioner.jpg?s=612x612&w=0&k=20&c=b8kUyVtmZeW8MeLHcDsJfqqF0XiFBjq6tgBQZC7G0f0="));
+    liveDoctorsList.add(DoctorModel.live(id: "2", imageUrl: "https://familydoctor.org/wp-content/uploads/2018/02/41808433_l.jpg"));
+    liveDoctorsList.add(DoctorModel.live(id: "3", imageUrl: "https://media.cnn.com/api/v1/images/stellar/prod/230217092727-02-us-black-doctors-shortage.jpg?c=16x9&q=h_720,w_1280,c_fill"));
 
 
     List<DoctorPopularModel>popularDoctorsList=[];

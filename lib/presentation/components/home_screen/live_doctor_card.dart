@@ -1,13 +1,14 @@
-import 'package:doctor_hunt/data/model/doctor_live_model.dart';
+
 import 'package:doctor_hunt/presentation/components/images/svg_images.dart';
 import 'package:doctor_hunt/presentation/components/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/styles.dart';
+import '../../../data/model/doctor_model.dart';
 
 class LiveDoctorCard extends StatelessWidget {
 
-  final DoctorLiveModel model;
+  final DoctorModel model;
 
   const LiveDoctorCard({super.key, required this.model});
 

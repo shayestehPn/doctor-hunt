@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../data/model/doctor_live_model.dart';
+import '../../../data/model/doctor_model.dart';
 import 'live_doctor_card.dart';
 
 class LiveDoctorsList extends StatelessWidget {
 
-  final List<DoctorLiveModel> liveDoctorsList;
+  final List<DoctorModel> liveDoctorsList;
 
   const LiveDoctorsList({super.key, required this.liveDoctorsList});
 

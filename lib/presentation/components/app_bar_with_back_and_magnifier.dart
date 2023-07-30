@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'button_with_touch_point.dart';
 import 'images/svg_images.dart';
 
 
@@ -12,9 +13,9 @@ class AppBarWithBackAndMagnifier extends StatelessWidget {
 
    AppBarWithBackAndMagnifier({
     super.key,
-    required this.backOnClick,
     required this.title,
     required this.showMagnifier,
+     required this.backOnClick,
      this.magnifierOnClick,
   });
 
@@ -50,18 +51,24 @@ class AppBarWithBackAndMagnifier extends StatelessWidget {
                   fontWeight: FontWeight.w500
               ),
             ),
-            // Expanded(
-            //     child: Align(
-            //       alignment: Alignment.centerRight,
-            //       child: ButtonWithTouchPoint(
-            //         buttonWidget: null,
-            //         touchingAreaHeight: null,
-            //         touchingAreaWidth: null,
-            //         onClick: () {
-            //
-            //         }),
-            //     )
-            // )
+            showMagnifier?Expanded(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: ButtonWithTouchPoint(
+                    buttonWidget: SizedBox(
+                      height: 18.w,
+                      width: 18.w,
+                      child: SvgImage.magnifierSvg,
+                    ),
+                    touchingAreaHeight: 60.w,
+                    touchingAreaWidth: 60.w,
+                    onClick: () {
+                      magnifierOnClick!();
+                    },
+                    alignmentOfWidgetOnStack: Alignment.center,
+                  ),
+                )
+            ):Container()
           ],
         )
       ],

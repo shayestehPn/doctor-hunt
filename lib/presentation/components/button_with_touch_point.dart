@@ -13,8 +13,8 @@ class ButtonWithTouchPoint extends StatelessWidget {
     required this.buttonWidget,
     required this.touchingAreaHeight,
     required this.touchingAreaWidth,
+    required this.alignmentOfWidgetOnStack,
     required this.onClick,
-    required this.alignmentOfWidgetOnStack
   });
 
   @override

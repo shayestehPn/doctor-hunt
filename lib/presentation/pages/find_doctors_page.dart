@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../business_logic/find_doctors/find_doctors_state.dart';
-import '../components/find_doctors_page/find_doctor_app_bar.dart';
+import '../components/app_bar_with_back_and_magnifier.dart';
 import '../components/find_doctors_page/find_doctor_search_text_field.dart';
 import '../components/loading_dilaog.dart';
 
@@ -48,10 +48,12 @@ class FindDoctorsPage extends StatelessWidget {
                   showGreenBlur: true,
                   pageContent: Column(
                     children: [
-                      FindDoctorAppBar(
+                      AppBarWithBackAndMagnifier(
                         backOnClick: () {
                           Get.back();
                         },
+                        title: 'Find Trusted Doctors',
+                        showMagnifier: false,
                       ),
                       FindDoctorTextField(
                         controller: doctorTextFieldController,

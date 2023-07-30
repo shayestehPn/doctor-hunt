@@ -21,7 +21,9 @@ class HomeRepository{
         imageUrl: "https://doctorsns.com/sites/default/files/styles/manual_teaser_squareish_large/public/2023-06/news/halifaxrealestatephotography_0.jpg?itok=pj24tfDy",
         score: 2.8,
         medicalCategory: "dentist specialist",
-        numberOfViews: 0)
+        numberOfViews: 0,
+        isLikedByUser: true
+    )
     );
     popularDoctorsList.add(DoctorPopularModel(
         id: "56",
@@ -29,7 +31,8 @@ class HomeRepository{
         imageUrl: "https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj",
         score: 3.1,
         medicalCategory: "heart specialist",
-        numberOfViews: 0)
+        numberOfViews: 0,
+        isLikedByUser: true)
     );
 
     List<DoctorFeaturedModel> featuredDoctorsList=[];

@@ -7,6 +7,7 @@ class DoctorPopularModel{
   double score;
   String imageUrl;
   int numberOfViews;
+  bool isLikedByUser;
 
   DoctorPopularModel({
     required this.id,
@@ -14,7 +15,8 @@ class DoctorPopularModel{
     required this.imageUrl,
     required this.score,
     required this.medicalCategory,
-    required this.numberOfViews
+    required this.numberOfViews,
+    required this.isLikedByUser
   });
 
 }

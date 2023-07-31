@@ -1,6 +1,5 @@
 import 'package:doctor_hunt/business_logic/on_branding/on_branding_cubit.dart';
 import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
-import 'package:doctor_hunt/presentation/components/images/png_images.dart';
 import 'package:doctor_hunt/presentation/components/stack_with_blurs.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_first.dart';
 import 'package:doctor_hunt/presentation/pages/on_branding_second.dart';
@@ -43,11 +42,6 @@ class OnBrandingPage extends StatelessWidget {
               pageContent: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                  ),
                   PageView.builder(
                       itemCount: pageViewItems.length,
                       scrollDirection: Axis.horizontal,
@@ -58,38 +52,29 @@ class OnBrandingPage extends StatelessWidget {
                         return pageViewItems[position];
                       }
                   ),
-                  Stack(
-                    alignment: Alignment.center,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: 134.h,
+                      CustomSolidGreenButton(
+                        height: 54.h,
+                        width: 295.w,
+                        onClick: (){
+                          Get.toNamed(Routes.mainPage);
+                        },
+                        text: "Get started",
                       ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CustomSolidGreenButton(
-                            height: 54.h,
-                            width: 295.w,
-                            onClick: (){
-                              Get.toNamed(Routes.mainPage);
-                            },
-                            text: "Get started",
-                          ),
-                          CustomTransparentButton(
-                              height: 54.h,
-                              width: 295.w,
-                              text: "skip",
-                              onClick: (){
-                                goToNext(context,state);
-                              }
-                          ),
-                          SizedBox(height: 43.h,)
-                        ],
+                      CustomTransparentButton(
+                          height: 54.h,
+                          width: 295.w,
+                          text: "skip",
+                          onClick: (){
+                            goToNextPage(context,state);
+                          }
                       ),
+                      SizedBox(height: 43.h,)
                     ],
-                  )
+                  ),
                 ],
               ),
           );
@@ -98,7 +83,7 @@ class OnBrandingPage extends StatelessWidget {
     );
   }
 
-  void goToNext(BuildContext context,OnBrandingState state){
+  void goToNextPage(BuildContext context,OnBrandingState state){
     context.read<OnBrandingCubit>().increasePageNumber();
     if(state.currentPageIndex>=pageViewItems.length){
       Get.toNamed(Routes.mainPage);

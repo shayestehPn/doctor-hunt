@@ -30,7 +30,7 @@ class EmptyTimeSlotsContent extends StatelessWidget {
             "No slots available",
             style: TextStyle(
                 fontSize: 14.sp,
-                fontWeight: AppStyles.normalFont
+                fontWeight: AppStyles.regularFont
             ),
           ),
         ),
@@ -48,7 +48,7 @@ class EmptyTimeSlotsContent extends StatelessWidget {
             "OR",
             style: TextStyle(
                 fontSize: 14.sp,
-                fontWeight: AppStyles.normalFont
+                fontWeight: AppStyles.regularFont
             ),
           ),
         ),

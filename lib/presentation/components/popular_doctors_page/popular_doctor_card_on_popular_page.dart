@@ -91,7 +91,7 @@ class PopularDoctorCardOnPopularPage extends StatelessWidget {
                             TextSpan(
                                 text: " ( ${model.numberOfViews} views )",
                                 style:  TextStyle(
-                                    fontWeight: AppStyles.normalFont,
+                                    fontWeight: AppStyles.regularFont,
                                     color: AppColors.gray,
                                   fontSize: 12.sp
                                 )

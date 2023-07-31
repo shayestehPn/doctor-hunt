@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/model/doctor_model.dart';
-import 'PopularDoctorCardOnPopularPage.dart';
+import 'popular_doctor_card_on_popular_page.dart';
 
 class PopularDoctorsListOnPopularPage extends StatelessWidget {
 

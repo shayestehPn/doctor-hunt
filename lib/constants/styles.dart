@@ -15,7 +15,7 @@ class AppStyles{
   static FontWeight thinFont=FontWeight.w100;
   static FontWeight extraLightFont=FontWeight.w200;
   static FontWeight lightFont=FontWeight.w300;
-  static FontWeight normalFont=FontWeight.w400;
+  static FontWeight regularFont=FontWeight.w400;
   static FontWeight mediumFont=FontWeight.w500;
   static FontWeight semiBoldFont=FontWeight.w600;
   static FontWeight boldFont=FontWeight.w700;

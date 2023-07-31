@@ -52,7 +52,7 @@ class FavoriteDoctorCard extends StatelessWidget {
           Text(
             doctorModel.medicalCategory,
             style: TextStyle(
-                fontWeight: AppStyles.normalFont,
+                fontWeight: AppStyles.regularFont,
                 fontSize: 12.sp,
                 color: AppColors.green
             ),

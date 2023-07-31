@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../constants/styles.dart';
 import '../components/images/png_images.dart';
 import '../components/images/svg_images.dart';
 
@@ -20,10 +21,9 @@ class OnBrandingSecond extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   children: [
                     Stack(
-                      alignment: Alignment.topRight,
                       children: [
                         SizedBox(
-                          height: 427.w,
+                          height: MediaQuery.of(context).size.height,
                           width: MediaQuery.of(context).size.width,
                         ),
                         Positioned(
@@ -34,36 +34,42 @@ class OnBrandingSecond extends StatelessWidget {
                             child: SvgImage.circleTopRightSvg,
                           ),
                         ),
-                        Center(
-                            child: Container(
+                        Column(
+                          children: [
+                            Container(
                               height: 336.w,
                               width: 336.w,
-                              margin: EdgeInsets.only(top: 93.h),
+                              margin: EdgeInsets.only(top: 91.h),
                               child: PngImage.doctor2Png,
+                            ),
+                            SizedBox(height: 85.h),
+                            Text("Choose Best Doctors",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 28.sp,
+                                  fontWeight: AppStyles.mediumFont,
+                                  color: Colors.black
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 43.w),
+                              child: Text("Contrary to popular belief, Lorem Ipsum is not"
+                                  " simply random text. "
+                                  "It has roots in a piece of it over"
+                                  " 2000 years old.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    color: Colors.grey.withOpacity(0.9),
+                                  fontWeight: AppStyles.regularFont
+                                ),
+                              ),
                             )
+                          ],
                         )
                       ],
                     ),
-                    Text("Choose Best Doctors",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20.sp,
-                          color: Colors.black
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 43.w),
-                      child: Text("Contrary to popular belief, Lorem Ipsum is not"
-                          " simply random text. "
-                          "It has roots in a piece of it over"
-                          " 2000 years old.",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.grey.withOpacity(0.9)
-                        ),
-                      ),
-                    )
+
                   ],
                 ),
               )

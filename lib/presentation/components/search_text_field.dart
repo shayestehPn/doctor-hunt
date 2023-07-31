@@ -29,14 +29,7 @@ class SearchTextField extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: AppStyles.cardBorderRadius,
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xffC9C5CA).withOpacity(0.2),
-              blurRadius: 3,
-              spreadRadius: 1,
-              offset: const Offset(3, 1),
-            )
-          ]
+          boxShadow: [AppStyles.equalBoxShadow]
       ),
       child: Row(
         children: [

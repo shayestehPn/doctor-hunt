@@ -1,4 +1,5 @@
 
+import 'package:doctor_hunt/constants/styles.dart';
 import 'package:doctor_hunt/presentation/components/custom_solid_green_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,14 +24,7 @@ class DoctorCardForFindDoctors extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xffC9C5CA).withOpacity(0.5),
-              blurRadius: 5,
-              spreadRadius: 1,
-              offset: const Offset(1, 1),
-            )
-          ]
+          boxShadow: [AppStyles.equalBoxShadow]
       ),
       child: Column(
         children: [

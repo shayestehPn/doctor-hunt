@@ -26,7 +26,9 @@ class FeaturedDoctorCard extends StatelessWidget {
         margin: EdgeInsets.only(right: 12.w),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: AppStyles.cardBorderRadius),
+          borderRadius: AppStyles.cardBorderRadius,
+            boxShadow: [AppStyles.equalBoxShadow]
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

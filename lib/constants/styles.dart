@@ -21,5 +21,14 @@ class AppStyles{
   static FontWeight boldFont=FontWeight.w700;
   static FontWeight extraBoldFont=FontWeight.w800;
 
+  //box shadow
+
+  static BoxShadow equalBoxShadow=BoxShadow(
+  color: const Color(0xffC9C5CA).withOpacity(0.5),
+  blurRadius: 5,
+  spreadRadius: 1,
+  offset: const Offset(1, 1),
+  );
+
 
 }

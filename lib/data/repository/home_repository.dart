@@ -41,7 +41,8 @@ class HomeRepository{
         imageUrl: "https://victoria.mediaplanet.com/app/uploads/sites/103/2019/12/MainImage_A1-1-576x486.jpg",
         score: 3.7,
         priceEveryHour: "22.5",
-        isLikedByUser: true)
+        isLikedByUser: true,
+        medicalCategory: 'eye specialist')
     );
     featuredDoctorsList.add(DoctorModel.featured(
         id: "78",
@@ -49,7 +50,8 @@ class HomeRepository{
         imageUrl: "https://ahahealthtech.org/wp-content/uploads/2018/06/AnnMarieNavar.jpg",
         score: 5.6,
         priceEveryHour: "50.5",
-        isLikedByUser: false)
+        isLikedByUser: false,
+        medicalCategory: 'eye specialist')
     );
 
     return HomeDto(

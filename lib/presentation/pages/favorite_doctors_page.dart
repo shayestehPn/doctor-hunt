@@ -87,7 +87,7 @@ class FavoriteDoctorsPage extends StatelessWidget {
                                   FeaturedDoctorsList(
                                       featuredDoctorsList: state.dto.featuredDoctorsList,
                                     itemOnClick: (int index) {
-                                        context.read<FavoriteDoctorsCubit>().toggleFeaturedDoctorLike(index);
+                                        context.read<FavoriteDoctorsCubit>().likeFeaturedDoctor(index);
                                     },
                                   ),
                                   SizedBox(height: 100.h)

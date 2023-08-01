@@ -29,7 +29,8 @@ class DoctorModel{
     required this.imageUrl,
     required this.score,
     required this.priceEveryHour,
-    required this.isLikedByUser
+    required this.isLikedByUser,
+    required this.medicalCategory
   });
 
   DoctorModel.live({

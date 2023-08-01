@@ -36,12 +36,48 @@ class FavoriteDoctorsCubit extends Cubit<FavoriteDoctorsState>{
   }
 
 
-
-  void toggleFeaturedDoctorLike(int index){
+  void likeFeaturedDoctor(int index){
     List<DoctorModel> featuredDoctorsList=(state as Success).dto.featuredDoctorsList;
-    featuredDoctorsList[index].isLikedByUser=!featuredDoctorsList[index].isLikedByUser;
-    emit(Success(dto:( state as Success).dto.copyWith(featuredDoctorsList: featuredDoctorsList )));
+    List<DoctorModel> favoriteDoctorsList=(state as Success).dto.allDoctorsList;
+
+    if(!featuredDoctorsList[index].isLikedByUser){
+      favoriteDoctorsList=addLikedDoctorToFavoriteDoctorsList(favoriteDoctorsList,featuredDoctorsList[index]);
+    }
+
+    if(featuredDoctorsList[index].isLikedByUser){
+      favoriteDoctorsList=removeDoctorFromFavoriteDoctorsList(favoriteDoctorsList,featuredDoctorsList[index]);
+    }
+
+    featuredDoctorsList= toggleFeaturedDoctorLike(featuredDoctorsList, index);
+
+    emit(Success(dto:( state as Success).dto.copyWith(featuredDoctorsList: featuredDoctorsList,allDoctorsList: favoriteDoctorsList )));
   }
+
+
+  List<DoctorModel> toggleFeaturedDoctorLike(List<DoctorModel> featuredDoctorsList,int index){
+    featuredDoctorsList[index].isLikedByUser=!featuredDoctorsList[index].isLikedByUser;
+    return featuredDoctorsList;
+  }
+
+  List<DoctorModel> addLikedDoctorToFavoriteDoctorsList(List<DoctorModel> favoriteDoctorsList,DoctorModel doctorModel){
+    if(!favoriteDoctorsList.contains(doctorModel)){
+      favoriteDoctorsList.add(doctorModel);
+    }
+    return favoriteDoctorsList;
+  }
+
+
+  List<DoctorModel> removeDoctorFromFavoriteDoctorsList(List<DoctorModel> favoriteDoctorsList,DoctorModel doctorModel){
+    if(favoriteDoctorsList.contains(doctorModel)){
+      favoriteDoctorsList.remove(doctorModel);
+    }
+    return favoriteDoctorsList;
+  }
+
+
+
+
+
 
 
 }

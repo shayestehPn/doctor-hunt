@@ -40,9 +40,12 @@ class DateCardOnSelectTime extends StatelessWidget {
           )
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "${model.date.month} ${model.date.day}",
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.ltr,
               style: TextStyle(
                   fontWeight: AppStyles.mediumFont,
                   fontSize: 16.sp,
@@ -52,6 +55,8 @@ class DateCardOnSelectTime extends StatelessWidget {
             ),
             Text(
               "${model.timeSlotsList.length} slots available",
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.ltr,
               style: TextStyle(
                   fontWeight: AppStyles.mediumFont,
                   fontSize: 16.sp,
